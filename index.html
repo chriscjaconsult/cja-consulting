@@ -1045,16 +1045,24 @@ html { scroll-behavior: smooth; scroll-padding-top: 88px; }
   .hero--split .hero-grid,
   .hero--dark .hero-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 32px;
   }
   .hero--typographic .hero-mark,
   .hero--dark .hero-mark { justify-content: flex-start; }
   .hero--typographic .hero-mark img,
-  .hero--dark .hero-mark img { max-width: 160px; }
-  .hero--split .hero-portrait { max-width: 360px; margin: 0 auto; }
+  .hero--dark .hero-mark img { max-width: 140px; }
+  /* 4:5 portrait at 360px was ~450px tall — overpowering the
+     copy above it. Cap closer to the text block height. */
+  .hero--split .hero-portrait { max-width: 260px; margin: 0 auto; }
   .hero-actions { gap: 10px; margin-top: 28px; }
   .hero-actions .btn { width: 100%; justify-content: center; }
-  .meta-bar { grid-template-columns: 1fr; gap: 18px; margin-top: 40px; }
+  .meta-bar {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 44px;
+    padding-top: 28px;
+  }
+  .meta-bar > div { gap: 6px; }
 
   /* --- Problem: stack title and bullets; single-column list --- */
   .problem-grid { grid-template-columns: 1fr; gap: 32px; }
@@ -1067,13 +1075,16 @@ html { scroll-behavior: smooth; scroll-padding-top: 88px; }
   .approach-step { padding: 20px; }
   .approach-step .step-head { margin-bottom: 16px; }
 
-  /* --- Services: three-up becomes single column --- */
+  /* --- Services: three-up becomes single column.
+     Tight padding + tight internal margins so each stacked
+     card stays compact when reading top-to-bottom. --- */
   .services-head { flex-direction: column; align-items: flex-start; margin-bottom: 40px; }
-  .offers-grid { grid-template-columns: 1fr; gap: 12px; }
-  .offer-card { padding: 20px; }
-  .offer-meta { margin-bottom: 14px; }
-  .offer-card h3 { font-size: 17px; margin: 0 0 8px; }
-  .offer-card p { font-size: 14px; line-height: 1.5; margin: 0 0 16px; }
+  .offers-grid { grid-template-columns: 1fr; gap: 10px; }
+  .offer-card { padding: 16px 18px; }
+  .offer-meta { margin-bottom: 10px; }
+  .offer-card h3 { font-size: 16px; line-height: 1.3; margin: 0 0 6px; }
+  .offer-card p { font-size: 13.5px; line-height: 1.5; margin: 0 0 12px; }
+  .offer-link { font-size: 12px; }
 
   /* --- ME inline strip: force column so the body paragraph
      gets full width instead of squeezing into the row beside
@@ -1116,12 +1127,13 @@ html { scroll-behavior: smooth; scroll-padding-top: 88px; }
   .hero { padding: 32px 0 48px; }
   .contact-form { padding: 20px; }
   .contact-form--success { padding: 32px 20px; }
-  .offer-card { padding: 18px; }
+  .offer-card { padding: 14px 16px; }
   .approach-step { padding: 18px; }
   .site-footer .grid { grid-template-columns: 1fr; gap: 32px; }
-  /* Pull the hero portrait's decorative offset in so it doesn't
-     get clipped against the (now hidden) viewport edge. */
-  .hero--split .hero-portrait::after { inset: auto -8px -8px auto; width: 80px; height: 80px; }
+  /* Smaller portrait + matching decorative offset so the photo
+     sits in proportion to the heading and lede above it. */
+  .hero--split .hero-portrait { max-width: 220px; }
+  .hero--split .hero-portrait::after { inset: auto -8px -8px auto; width: 64px; height: 64px; }
 }
 </style>
 
