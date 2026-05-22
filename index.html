@@ -1014,6 +1014,105 @@ body { margin: 0; }
 
 /* Smooth in-page anchor scrolling */
 html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+
+/* ===========================================================
+   Responsive — tablet + phone
+   Stacks every multi-column grid into a single column and
+   tightens spacing so the layout works down to ~360px wide.
+   =========================================================== */
+@media (max-width: 768px) {
+  html { scroll-padding-top: 72px; }
+  body { overflow-x: hidden; }
+
+  .container { padding: 0 20px; }
+  .section { padding: 64px 0; }
+  .section-tight { padding: 48px 0; }
+
+  /* Long brand words (e.g. "businesses", "professional") should
+     break instead of clipping the column on a 375px viewport. */
+  h1, h2, h3, h4 { overflow-wrap: break-word; hyphens: auto; }
+
+  /* --- Header: drop the inline nav; keep brand + one CTA --- */
+  .site-header { height: 60px; }
+  .site-header nav { display: none; }
+  .site-header .brand img { height: 28px; }
+  .site-header .cta .btn-ghost { display: none; }
+  .site-header .cta .btn { padding: 8px 14px; font-size: 13px; }
+
+  /* --- Hero variants stack --- */
+  .hero { padding: 48px 0 64px; }
+  .hero--typographic .hero-grid,
+  .hero--split .hero-grid,
+  .hero--dark .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .hero--typographic .hero-mark,
+  .hero--dark .hero-mark { justify-content: flex-start; }
+  .hero--typographic .hero-mark img,
+  .hero--dark .hero-mark img { max-width: 160px; }
+  .hero--split .hero-portrait { max-width: 360px; margin: 0 auto; }
+  .hero-actions { gap: 10px; margin-top: 28px; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+  .meta-bar { grid-template-columns: 1fr; gap: 18px; margin-top: 40px; }
+
+  /* --- Problem: stack title and bullets; single-column list --- */
+  .problem-grid { grid-template-columns: 1fr; gap: 32px; }
+  .prob-list { grid-template-columns: 1fr; gap: 12px; }
+  .problem-summary { font-size: 15px; }
+
+  /* --- Approach: five-up becomes a single column stack --- */
+  .approach-intro { margin-bottom: 40px; }
+  .approach-grid { grid-template-columns: 1fr; gap: 12px; }
+  .approach-step { padding: 20px; }
+  .approach-step .step-head { margin-bottom: 16px; }
+
+  /* --- Services: three-up becomes single column --- */
+  .services-head { flex-direction: column; align-items: flex-start; margin-bottom: 40px; }
+  .offers-grid { grid-template-columns: 1fr; gap: 14px; }
+  .offer-card { padding: 22px; }
+
+  /* --- ME inline strip --- */
+  .me-strip .container { gap: 16px; }
+  .me-strip .me-body { min-width: 0; }
+
+  /* --- Final / inline CTAs --- */
+  .cta-grid { grid-template-columns: 1fr; gap: 32px; }
+  .cta-actions { align-items: stretch; }
+  .cta-actions .btn { justify-content: center; }
+  .inline-cta { padding: 40px 0; }
+  .inline-cta-grid { grid-template-columns: 1fr; gap: 24px; }
+  .inline-cta-actions { justify-content: flex-start; }
+  .inline-cta-actions .btn { flex: 1; justify-content: center; }
+
+  /* --- Contact: stack copy above form; single-column inputs --- */
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .contact-divider { margin: 28px 0; }
+  .contact-form { padding: 24px; }
+  .contact-form-head h3 { font-size: 20px; }
+  .form-row { grid-template-columns: 1fr; gap: 0; margin-bottom: 0; }
+  .form-row .field { margin-bottom: 16px; }
+  .contact-form--success { padding: 40px 24px; }
+
+  /* --- Footer: two-up, legal wraps --- */
+  .site-footer { padding: 48px 0 28px; }
+  .site-footer .grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .site-footer .legal { flex-direction: column; gap: 8px; align-items: flex-start; margin-top: 40px; }
+}
+
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+  .section { padding: 48px 0; }
+  .hero { padding: 32px 0 48px; }
+  .contact-form { padding: 20px; }
+  .contact-form--success { padding: 32px 20px; }
+  .offer-card { padding: 20px; }
+  .approach-step { padding: 18px; }
+  .site-footer .grid { grid-template-columns: 1fr; gap: 28px; }
+  /* Pull the hero portrait's decorative offset in so it doesn't
+     get clipped against the (now hidden) viewport edge. */
+  .hero--split .hero-portrait::after { inset: auto -8px -8px auto; width: 80px; height: 80px; }
+}
 </style>
 
 <!-- Resources referenced from JSX string literals (not visible to the static bundler).
