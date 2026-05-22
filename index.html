@@ -830,14 +830,17 @@ body { margin: 0; }
 }
 
 /* --- Contact (rebuilt CTA section with form) -------------- */
+/* Vertical stack: copy + direct contacts on top, form below
+   at full container width. The copy block is capped so the
+   heading and lede don't sprawl across 1200px on desktop. */
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
+  grid-template-columns: 1fr;
+  gap: 48px;
   align-items: start;
 }
 
-.contact-copy { padding-top: 8px; }
+.contact-copy { max-width: 760px; }
 
 .contact-meta {
   margin-top: 32px;
