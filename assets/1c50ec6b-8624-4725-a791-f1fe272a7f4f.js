@@ -515,7 +515,6 @@ const Contact = () => {
               id="JotFormIFrame-261355382415052"
               title="CJA Consulting — Enquiry"
               onLoad={() => {
-                if (window.parent) window.parent.scrollTo(0,0);
                 if (!window._jfListener) {
                   window._jfListener = true;
                   window.addEventListener('message', function(e) {
