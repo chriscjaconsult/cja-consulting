@@ -830,17 +830,18 @@ body { margin: 0; }
 }
 
 /* --- Contact (rebuilt CTA section with form) -------------- */
-/* Vertical stack: copy + direct contacts on top, form below
-   at full container width. The copy block is capped so the
-   heading and lede don't sprawl across 1200px on desktop. */
+/* Two-column: text + direct contacts on the left (~40%),
+   form on the right (~60%). minmax(0, …) on the form track
+   stops the iframe's intrinsic min-content width from
+   stretching the column. */
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 48px;
+  grid-template-columns: 2fr minmax(0, 3fr);
+  gap: 64px;
   align-items: start;
 }
 
-.contact-copy { max-width: 760px; }
+.contact-copy { padding-top: 8px; }
 
 .contact-meta {
   margin-top: 32px;
@@ -885,8 +886,12 @@ body { margin: 0; }
 .contact-direct-row svg { width: 16px; height: 16px; color: var(--cja-aqua); flex: 0 0 16px; }
 
 /* --- Contact form (white card on dark) -------------------- */
+/* overflow: hidden + matching border-radius clips anything the
+   iframe paints right up to its rounded edge. */
 .contact-form-wrap {
   position: relative;
+  border-radius: 8px;
+  overflow: hidden;
 }
 .contact-form {
   background: var(--cja-white);
