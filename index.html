@@ -1,1241 +1,1055 @@
 <!DOCTYPE html>
-<html lang="en"><head><script>window.__resources = {"logoWide": "assets/logoWide.png", "iconMark": "assets/iconMark.png", "heroPortrait": "assets/heroPortrait.jpg"};</script>
+<html lang="en-GB">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CJA Consulting · Senior strategic advisory for professional services</title>
-<meta name="description" content="Senior, judgement-led strategic advisory for professional services leaders. Decision clarity, commercial direction, and a credible path forward.">
-<meta name="theme-color" content="#37BFB7">
+<meta name="robots" content="noindex, nofollow">
+<title>Refer someone to CJA Consulting</title>
+<meta name="theme-color" content="#0F1F35">
 <link rel="icon" href="assets/iconMark.png">
-<style>/* ===========================================================
-   CJA Consulting — Foundations (colors + type)
-   Source of truth for colors_and_type used everywhere.
+
+<style>
+/* ===========================================================
+   CJA Consulting - brand foundations (colours + type)
+   Carried over unchanged from the main site design system.
    =========================================================== */
 
-/* ---------- Type ----------------------------------------- */
-/* Brand spec calls for Helvetica (Light / Regular / Bold).
-   Real licensed font files are loaded from /fonts.
-   Helvetica Neue is the preferred face; classic Helvetica is the fallback. */
-
 @font-face { font-family: 'Helvetica Neue'; font-weight: 300; font-style: normal; src: url("assets/f176f3c3-f39c-4559-9ce4-ba0076f7f26b.otf") format('opentype'); font-display: swap; }
-@font-face { font-family: 'Helvetica Neue'; font-weight: 400; font-style: normal; src: url("assets/50d4ba49-55b8-45dc-9a65-2975af5c03ae.otf")        format('opentype'); font-display: swap; }
+@font-face { font-family: 'Helvetica Neue'; font-weight: 400; font-style: normal; src: url("assets/50d4ba49-55b8-45dc-9a65-2975af5c03ae.otf") format('opentype'); font-display: swap; }
 @font-face { font-family: 'Helvetica Neue'; font-weight: 500; font-style: normal; src: url("assets/df1927e0-3992-4084-a865-1332ab43e05f.otf") format('opentype'); font-display: swap; }
-@font-face { font-family: 'Helvetica Neue'; font-weight: 700; font-style: normal; src: url("assets/573f9ec0-f689-4008-bcf1-40bfe686cabc.otf")   format('opentype'); font-display: swap; }
+@font-face { font-family: 'Helvetica Neue'; font-weight: 700; font-style: normal; src: url("assets/573f9ec0-f689-4008-bcf1-40bfe686cabc.otf") format('opentype'); font-display: swap; }
 
-@font-face { font-family: 'Helvetica';      font-weight: 300; font-style: normal; src: url("assets/0a9011f6-7af3-4bdd-87f3-7008e1165804.ttf") format('truetype'); font-display: swap; }
-@font-face { font-family: 'Helvetica';      font-weight: 400; font-style: normal; src: url("assets/5e013b20-d533-4c9d-909f-7f5049e93e3e.ttf")       format('truetype'); font-display: swap; }
-@font-face { font-family: 'Helvetica';      font-weight: 700; font-style: normal; src: url("assets/a7ffe4fa-1f21-45c0-8ba7-4a2f4239bfb2.ttf")  format('truetype'); font-display: swap; }
+@font-face { font-family: 'Helvetica'; font-weight: 300; font-style: normal; src: url("assets/0a9011f6-7af3-4bdd-87f3-7008e1165804.ttf") format('truetype'); font-display: swap; }
+@font-face { font-family: 'Helvetica'; font-weight: 400; font-style: normal; src: url("assets/5e013b20-d533-4c9d-909f-7f5049e93e3e.ttf") format('truetype'); font-display: swap; }
+@font-face { font-family: 'Helvetica'; font-weight: 700; font-style: normal; src: url("assets/a7ffe4fa-1f21-45c0-8ba7-4a2f4239bfb2.ttf") format('truetype'); font-display: swap; }
 
 :root {
-  /* ---------- Brand colors (from Color.pdf) ----------------- */
-  /* Main */
-  --cja-teal:        #37BFB7;   /* MAIN COLOR — primary brand */
-  --cja-ink:         #0F1F35;   /* SECONDARY COLOR — deep navy/ink */
+  /* Brand */
+  --cja-teal:        #37BFB7;
+  --cja-ink:         #0F1F35;
+  --cja-teal-light:  #18CBBE;
+  --cja-teal-deep:   #08877A;
 
-  /* Logo gradient stops (from Color [logo only].pdf) */
-  --cja-teal-light:  #18CBBE;   /* gradient top */
-  --cja-teal-deep:   #08877A;   /* gradient bottom */
-
-  /* Palette — supporting colors */
+  /* Palette */
   --cja-slate-blue:  #859CBC;
   --cja-cobalt:      #0F4C83;
   --cja-aqua:        #7AE4DA;
   --cja-amber:       #F7A302;
-
-  --cja-peach:       #FDCF9B;
-  --cja-petrol:      #007296;
-  --cja-plum:        #705888;
-  --cja-rust:        #AD4520;
-
   --cja-charcoal:    #2C373B;
   --cja-mist:        #EDF1FD;
-  --cja-coral:       #F0A796;
   --cja-rose:        #ED476D;
 
-  /* ---------- Neutrals (derived) ---------------------------- */
+  /* Neutrals */
   --cja-white:       #FFFFFF;
   --cja-off-white:   #FAFBFC;
-  --cja-paper:       #F4F6F9;     /* warmer surface */
+  --cja-paper:       #F4F6F9;
   --cja-line:        #E3E8EF;
   --cja-line-strong: #C9D2DD;
   --cja-muted:       #6B7785;
   --cja-text-2:      #3D4856;
-  --cja-text-1:      var(--cja-ink);
-  --cja-black:       #0A1626;
 
-  /* ---------- Semantic foreground / surface ----------------- */
-  --fg-1: var(--cja-ink);          /* primary text */
-  --fg-2: var(--cja-text-2);       /* body / secondary */
-  --fg-3: var(--cja-muted);        /* labels / meta */
-  --fg-on-dark:    var(--cja-white);
-  --fg-on-teal:    var(--cja-white); /* white text on teal — per brand preference */
-
-  --bg-1: var(--cja-white);        /* page */
-  --bg-2: var(--cja-off-white);    /* subtle */
-  --bg-3: var(--cja-paper);        /* card / well */
-  --bg-mist: var(--cja-mist);      /* tinted section */
-  --bg-ink: var(--cja-ink);        /* dark sections */
-  --bg-charcoal: var(--cja-charcoal);
-
+  /* Semantic */
+  --fg-1: var(--cja-ink);
+  --fg-2: var(--cja-text-2);
+  --fg-3: var(--cja-muted);
+  --bg-1: var(--cja-white);
+  --bg-2: var(--cja-off-white);
+  --bg-3: var(--cja-paper);
+  --bg-mist: var(--cja-mist);
   --border-1: var(--cja-line);
   --border-2: var(--cja-line-strong);
+  --accent: var(--cja-teal);
+  --accent-deep: var(--cja-teal-deep);
 
-  /* ---------- Semantic accent ------------------------------- */
-  --accent:        var(--cja-teal);
-  --accent-deep:   var(--cja-teal-deep);
-  --accent-light:  var(--cja-aqua);
-  --accent-hover:  #2EA8A1;        /* teal at hover */
-  --accent-press:  #1E847E;        /* teal at press */
+  --gradient-teal: linear-gradient(135deg, var(--cja-teal-light) 0%, var(--cja-teal-deep) 100%);
 
-  /* Status (mapped to palette) */
-  --success: var(--cja-petrol);
-  --warning: var(--cja-amber);
-  --danger:  var(--cja-rose);
-  --info:    var(--cja-cobalt);
-
-  /* ---------- Gradients ------------------------------------- */
-  --gradient-mark:  linear-gradient(180deg, var(--cja-teal-light) 0%, var(--cja-teal-deep) 100%);
-  --gradient-teal:  linear-gradient(135deg, var(--cja-teal-light) 0%, var(--cja-teal-deep) 100%);
-  --gradient-ink:   linear-gradient(180deg, #122544 0%, #0A1626 100%);
-
-  /* ---------- Radii ----------------------------------------- */
-  --radius-xs: 2px;
+  /* Radii */
   --radius-sm: 4px;
   --radius-md: 6px;
   --radius-lg: 10px;
   --radius-xl: 16px;
   --radius-pill: 999px;
 
-  /* ---------- Spacing (4-pt scale) -------------------------- */
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --space-4: 16px;
-  --space-5: 20px;
-  --space-6: 24px;
-  --space-8: 32px;
-  --space-10: 40px;
-  --space-12: 48px;
-  --space-16: 64px;
-  --space-20: 80px;
-  --space-24: 96px;
-  --space-32: 128px;
+  /* Spacing (4pt) */
+  --space-1: 4px;  --space-2: 8px;  --space-3: 12px; --space-4: 16px;
+  --space-5: 20px; --space-6: 24px; --space-8: 32px; --space-10: 40px;
+  --space-12: 48px; --space-16: 64px; --space-20: 80px;
 
-  /* ---------- Shadows / Elevation --------------------------- */
-  /* Reserved, low-key. Brand is not a shadow-heavy brand. */
+  /* Elevation */
   --shadow-xs: 0 1px 2px rgba(15, 31, 53, 0.04);
   --shadow-sm: 0 2px 6px rgba(15, 31, 53, 0.06), 0 1px 2px rgba(15, 31, 53, 0.04);
   --shadow-md: 0 8px 20px rgba(15, 31, 53, 0.08), 0 2px 4px rgba(15, 31, 53, 0.04);
-  --shadow-lg: 0 24px 48px rgba(15, 31, 53, 0.12), 0 4px 10px rgba(15, 31, 53, 0.06);
-  --shadow-inset: inset 0 0 0 1px var(--border-1);
   --ring-focus: 0 0 0 3px rgba(55, 191, 183, 0.35);
 
-  /* ---------- Typography ------------------------------------ */
+  /* Type */
   --font-sans: "Helvetica Neue", "Helvetica", "Arial", system-ui, sans-serif;
-  --font-display: "Helvetica Neue", "Helvetica", "Arial", system-ui, sans-serif;
   --font-mono: "SF Mono", "JetBrains Mono", "Menlo", "Consolas", monospace;
+  --w-light: 300; --w-regular: 400; --w-medium: 500; --w-bold: 700;
 
-  /* Weights — brand calls out Light / Regular / Bold */
-  --w-light:    300;
-  --w-regular:  400;
-  --w-medium:   500;   /* used sparingly for UI */
-  --w-bold:     700;
+  --lh-tight: 1.1; --lh-snug: 1.2; --lh-body: 1.55; --lh-loose: 1.7;
+  --ls-tight: -0.02em; --ls-snug: -0.01em; --ls-eyebrow: 0.18em;
 
-  /* Type scale (display-weighted, slightly tighter for the
-     advisory/serious tone of the brand). */
-  --fs-display-xl: 64px;
-  --fs-display-l:  48px;
-  --fs-display-m:  36px;
-  --fs-h1:         32px;
-  --fs-h2:         24px;
-  --fs-h3:         20px;
-  --fs-h4:         18px;
-  --fs-body-l:     18px;
-  --fs-body:       16px;
-  --fs-body-s:     14px;
-  --fs-caption:    13px;
-  --fs-micro:      12px;
-
-  --lh-tight:  1.1;
-  --lh-snug:   1.2;
-  --lh-normal: 1.4;
-  --lh-body:   1.55;
-  --lh-loose:  1.7;
-
-  --ls-tight:  -0.02em;
-  --ls-snug:   -0.01em;
-  --ls-normal: 0;
-  --ls-wide:   0.04em;
-  --ls-eyebrow: 0.18em;   /* uppercase label / professional services advisory */
+  /* Sticky nav offset - kept in sync with .anchor-nav height */
+  --nav-h: 46px;
 }
 
-/* =========================================================
-   Base + element styles (semantic, low specificity)
-   ========================================================= */
+/* ===========================================================
+   Base - mobile first
+   =========================================================== */
+* { box-sizing: border-box; }
 
-html, body {
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-h) + 12px);
+  -webkit-text-size-adjust: 100%;
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
   font-family: var(--font-sans);
-  color: var(--fg-1);
-  background: var(--bg-1);
-  font-size: var(--fs-body);
+  font-size: 16px;
   line-height: var(--lh-body);
   font-weight: var(--w-regular);
+  color: var(--fg-1);
+  background: var(--bg-1);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
+h1, h2, h3, h4 {
+  font-family: var(--font-sans);
   color: var(--fg-1);
   font-weight: var(--w-bold);
   letter-spacing: var(--ls-snug);
   line-height: var(--lh-snug);
   margin: 0;
   text-wrap: balance;
+  overflow-wrap: break-word;
 }
 
-h1 { font-size: var(--fs-h1); letter-spacing: var(--ls-tight); }
-h2 { font-size: var(--fs-h2); }
-h3 { font-size: var(--fs-h3); }
-h4 { font-size: var(--fs-h4); }
+p { margin: 0 0 var(--space-4); color: var(--fg-2); text-wrap: pretty; }
+figure, blockquote { margin: 0; }
+p:last-child { margin-bottom: 0; }
 
-.display-xl { font-size: var(--fs-display-xl); font-weight: var(--w-bold); letter-spacing: var(--ls-tight); line-height: var(--lh-tight); }
-.display-l  { font-size: var(--fs-display-l);  font-weight: var(--w-bold); letter-spacing: var(--ls-tight); line-height: var(--lh-tight); }
-.display-m  { font-size: var(--fs-display-m);  font-weight: var(--w-bold); letter-spacing: var(--ls-snug);  line-height: var(--lh-snug);  }
-
-p {
-  margin: 0 0 var(--space-4) 0;
-  color: var(--fg-2);
-  text-wrap: pretty;
-  max-width: 68ch;
-}
-
-a {
-  color: var(--accent-deep);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: border-color 120ms ease, color 120ms ease;
-}
-a:hover  { border-bottom-color: currentColor; }
+a { color: var(--accent-deep); text-decoration: none; border-bottom: 1px solid rgba(8,135,122,0.35); transition: border-color 120ms ease, color 120ms ease; }
+a:hover { border-bottom-color: currentColor; }
 a:focus-visible { outline: none; box-shadow: var(--ring-focus); border-radius: 2px; }
 
-/* Eyebrow / overline — like "PROFESSIONAL SERVICES ADVISORY" in the logo */
+::selection { background: var(--cja-aqua); color: var(--cja-ink); }
+
+.container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+
+.section { padding: 48px 0; }
+.section--mist { background: var(--bg-mist); }
+.section--paper { background: var(--bg-2); }
+.section--ink { background: var(--cja-ink); color: var(--cja-white); }
+.section--ink h2, .section--ink h3 { color: var(--cja-white); }
+.section--ink p { color: rgba(255,255,255,0.78); }
+.section--ink a { color: var(--cja-aqua); border-bottom-color: rgba(122,228,218,0.35); }
+.section--ink a:hover { border-bottom-color: var(--cja-aqua); }
+
 .eyebrow {
-  font-size: var(--fs-caption);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
   font-weight: var(--w-bold);
   letter-spacing: var(--ls-eyebrow);
   text-transform: uppercase;
-  color: var(--fg-3);
+  color: var(--accent-deep);
+  margin: 0 0 16px;
 }
-
-.lede {
-  font-size: var(--fs-body-l);
-  line-height: var(--lh-body);
-  color: var(--fg-2);
-  font-weight: var(--w-light);
-  max-width: 60ch;
-}
-
-small, .meta {
-  font-size: var(--fs-caption);
-  color: var(--fg-3);
-}
-
-code, pre, kbd, samp {
-  font-family: var(--font-mono);
-  font-size: 0.95em;
-}
-
-hr {
-  border: none;
-  border-top: 1px solid var(--border-1);
-  margin: var(--space-8) 0;
-}
-
-::selection {
-  background: var(--cja-aqua);
-  color: var(--cja-ink);
-}
-</style>
-<style>/* ==========================================================
-   CJA Consulting — Landing page (forked from design system)
-   Extends colors_and_type.css for marketing-site layouts.
-   ========================================================== */
-
-* { box-sizing: border-box; }
-body { margin: 0; }
-
-/* Accent-intensity modes — applied at the artboard root */
-.acc-subtle   { --acc: var(--cja-text-2); --acc-soft: var(--cja-line); }
-.acc-standard { --acc: var(--cja-teal);   --acc-soft: rgba(55,191,183,0.12); }
-.acc-bold     { --acc: var(--cja-teal-deep); --acc-soft: rgba(8,135,122,0.16); }
-
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 32px;
-}
-
-.section { padding: 96px 0; }
-.section-tight { padding: 64px 0; }
-.section--ink { background: var(--cja-ink); color: var(--cja-white); }
-.section--ink h1, .section--ink h2, .section--ink h3, .section--ink h4 { color: var(--cja-white); }
-.section--ink p { color: rgba(255,255,255,0.78); }
-.section--mist { background: var(--cja-mist); }
-.section--paper { background: var(--cja-off-white); }
-
-/* --- Site header ------------------------------------------- */
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: rgba(255,255,255,0.96);
-  backdrop-filter: saturate(180%) blur(6px);
-  -webkit-backdrop-filter: saturate(180%) blur(6px);
-  border-bottom: 1px solid var(--border-1);
-  height: 72px;
-  display: flex;
-  align-items: center;
-}
-.site-header .container { display: flex; align-items: center; justify-content: space-between; }
-.site-header .brand { display: flex; align-items: center; gap: 12px; cursor: pointer; }
-.site-header .brand img { height: 32px; display: block; }
-.site-header nav { display: flex; gap: 28px; }
-.site-header nav a {
-  color: var(--fg-1);
-  font-size: 14px;
-  font-weight: 500;
-  border: none;
-  letter-spacing: 0.005em;
-  cursor: pointer;
-}
-.site-header nav a:hover { color: var(--accent-deep); border: none; }
-.site-header .cta { display: flex; gap: 12px; align-items: center; }
-
-/* --- Buttons ----------------------------------------------- */
-.btn {
-  font-family: inherit;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.005em;
-  padding: 11px 20px;
-  border-radius: 6px;
-  border: 1px solid transparent;
-  cursor: pointer;
-  transition: all 140ms cubic-bezier(0.2, 0.8, 0.2, 1);
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
-  white-space: nowrap;
-}
-.btn:focus-visible { outline: none; box-shadow: var(--ring-focus); }
-
-.btn-primary { background: var(--acc, var(--cja-teal)); color: var(--cja-white); }
-.btn-primary:hover { filter: brightness(0.93); }
-.btn-primary:active { filter: brightness(0.84); transform: translateY(1px); }
-
-.btn-ghost { background: transparent; color: var(--cja-ink); border-color: var(--border-2); }
-.btn-ghost:hover { border-color: var(--cja-ink); background: var(--bg-3); }
-
-.btn-on-dark { background: var(--acc, var(--cja-teal)); color: var(--cja-white); }
-.btn-on-dark.btn-ghost { background: transparent; color: var(--cja-white); border-color: rgba(255,255,255,0.3); }
-.btn-on-dark.btn-ghost:hover { border-color: var(--cja-aqua); color: var(--cja-aqua); background: transparent; }
-
-.btn-sm { font-size: 13px; padding: 8px 16px; }
-.btn-lg { font-size: 15px; padding: 14px 26px; }
-.btn .arrow { transition: transform 140ms ease; display: inline-block; }
-.btn:hover .arrow { transform: translateX(3px); }
-
-/* --- Eyebrow / dividers ------------------------------------ */
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--acc, var(--cja-teal-deep));
-  margin-bottom: 20px;
-}
-.eyebrow::before {
-  content: "";
-  width: 32px;
-  height: 1px;
-  background: var(--acc, var(--cja-teal));
-}
-.eyebrow.no-rule::before { display: none; }
+.eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--accent); flex: 0 0 28px; }
 .section--ink .eyebrow { color: var(--cja-aqua); }
 .section--ink .eyebrow::before { background: var(--cja-aqua); }
 
-/* --- Headings ---------------------------------------------- */
-.h-display {
-  font-size: clamp(40px, 5vw, 64px);
-  line-height: 1.05;
-  letter-spacing: -0.022em;
-  font-weight: 700;
-  text-wrap: balance;
-  margin: 0;
-}
-.h-display .accent { color: var(--acc, var(--cja-teal)); }
 .h-section {
-  font-size: clamp(28px, 3.4vw, 40px);
-  line-height: 1.12;
-  letter-spacing: -0.018em;
-  font-weight: 700;
-  text-wrap: balance;
-  margin: 0;
-}
-.h-eyebrow-title {
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-/* --- Hero ------------------------------------------------- */
-.hero { padding: 88px 0 96px; position: relative; }
-
-.hero--typographic .hero-grid {
-  display: grid;
-  grid-template-columns: 1.7fr 1fr;
-  gap: 64px;
-  align-items: center;
-}
-.hero--typographic .hero-mark {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-.hero--typographic .hero-mark img { width: 100%; max-width: 280px; display: block; }
-
-.hero--split .hero-grid {
-  display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  gap: 72px;
-  align-items: center;
-}
-.hero--split .hero-portrait {
+  font-size: 26px;
+  line-height: 1.15;
+  letter-spacing: var(--ls-tight);
+  margin: 0 0 16px;
   position: relative;
+  padding-top: 20px;
+}
+/* Short accent rule above each section heading, borrowed from the
+   original site's eyebrow. Gives the page a repeating beat. */
+.h-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 2px;
+  background: var(--accent);
+}
+.section--ink .h-section::before { background: var(--cja-aqua); }
+
+.divider { height: 1px; border: 0; background: var(--border-1); margin: 40px 0; }
+.h-sub {
+  font-size: 13px;
+  font-weight: var(--w-bold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+  margin: 40px 0 16px;
+}
+.lede { font-size: 17px; font-weight: var(--w-light); line-height: 1.55; color: var(--fg-2); }
+
+/* Keep the long-form sections to a comfortable measure. */
+#who-to-refer p,
+#what-you-get-back p,
+#who-i-am p,
+#what-to-send .lede { max-width: 70ch; }
+
+/* ===========================================================
+   Buttons
+   =========================================================== */
+.btn {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: var(--w-bold);
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 140ms ease, color 140ms ease, border-color 140ms ease, transform 140ms ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  line-height: 1.3;
+}
+.btn:focus-visible { outline: none; box-shadow: var(--ring-focus); }
+.btn-primary { background: var(--accent); color: var(--cja-white); border-color: var(--accent); }
+.btn-primary:hover { filter: brightness(0.93); border-bottom-color: var(--accent); }
+.btn-primary:active { transform: translateY(1px); }
+.btn-lg { font-size: 15px; padding: 15px 26px; }
+
+/* ===========================================================
+   Brand bar + sticky anchor nav
+   =========================================================== */
+.brand-bar {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-1);
+  background: var(--cja-white);
+}
+.brand-bar img { height: 26px; display: block; }
+
+.anchor-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: var(--nav-h);
+  background: rgba(255,255,255,0.97);
+  -webkit-backdrop-filter: saturate(180%) blur(6px);
+  backdrop-filter: saturate(180%) blur(6px);
+  border-bottom: 1px solid var(--border-1);
+}
+.anchor-nav .container {
+  height: 100%;
+  /* Tighter gutter than the page container so all four anchors
+     fit a 390px viewport without a horizontal scroll. */
+  padding: 0 14px;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 10px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.anchor-nav .container::-webkit-scrollbar { display: none; }
+.anchor-nav a {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: var(--w-medium);
+  letter-spacing: 0.005em;
+  color: var(--fg-2);
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 0 1px;
+  flex: 0 0 auto;
+}
+.anchor-nav a:hover { color: var(--cja-ink); border-bottom-color: var(--border-2); }
+.anchor-nav a.is-active { color: var(--cja-ink); border-bottom-color: var(--accent); }
+
+/* ===========================================================
+   Hero
+   =========================================================== */
+.hero { padding: 20px 0 40px; }
+
+/* Row 1 puts the eyebrow beside a small portrait; the headline, lede
+   and sentence card run full width beneath it. Costs far less vertical
+   space than stacking the photo, which is what keeps the sentence card
+   on the first screen at 390x844. */
+.hero .hero-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 16px;
+  align-items: center;
+}
+.hero .hero-eyebrow { grid-column: 1; grid-row: 1; margin: 0; }
+.hero .hero-visual  { grid-column: 2; grid-row: 1; }
+.hero .hero-copy    { grid-column: 1 / -1; grid-row: 2; padding-top: 14px; }
+
+.hero h1 {
+  font-size: 26px;
+  line-height: 1.16;
+  letter-spacing: var(--ls-tight);
+  margin: 0 0 14px;
+}
+.hero .lede { margin: 0; max-width: 56ch; }
+
+/* Portrait, carried over from the original split hero: 4:5 crop,
+   soft shadow and the offset teal block behind it. */
+.portrait-wrap { position: relative; width: fit-content; margin-left: auto; }
+.hero-portrait {
+  position: relative;
+  width: 76px;
   aspect-ratio: 4/5;
-  border-radius: 14px;
+  border-radius: 10px;
   overflow: hidden;
   box-shadow: var(--shadow-md);
+  margin-left: auto;
 }
-.hero--split .hero-portrait img {
+.hero-portrait img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
   filter: contrast(1.02) saturate(0.92);
 }
-.hero--split .hero-portrait::after {
+.portrait-wrap::after {
   content: "";
   position: absolute;
-  inset: auto -16px -16px auto;
-  width: 120px;
-  height: 120px;
-  background: var(--acc, var(--cja-teal));
+  inset: auto -8px -8px auto;
+  width: 40px;
+  height: 40px;
+  background: var(--accent);
   z-index: -1;
-  border-radius: 14px;
-}
-.hero--split .portrait-wrap { position: relative; }
-
-.hero--dark { background: var(--cja-ink); color: var(--cja-white); }
-.hero--dark .hero-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 64px; align-items: center; }
-.hero--dark .h-display { color: var(--cja-white); }
-.hero--dark .h-display .accent { color: var(--cja-aqua); }
-.hero--dark .lede { color: rgba(255,255,255,0.78); }
-.hero--dark .eyebrow { color: var(--cja-aqua); }
-.hero--dark .eyebrow::before { background: var(--cja-aqua); }
-.hero--dark .hero-mark img { filter: drop-shadow(0 8px 24px rgba(8,135,122,0.4)); max-width: 260px; }
-.hero--dark .meta-bar { color: rgba(255,255,255,0.5); border-color: rgba(255,255,255,0.12); }
-.hero--dark .meta-bar strong { color: var(--cja-white); }
-
-.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 36px; }
-
-.meta-bar {
-  margin-top: 56px;
-  padding-top: 24px;
-  border-top: 1px solid var(--border-1);
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  font-size: 13px;
-  color: var(--fg-3);
-}
-.meta-bar > div { display: flex; flex-direction: column; gap: 4px; }
-.meta-bar strong {
-  color: var(--fg-1);
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: -0.005em;
+  border-radius: 10px;
 }
 
-/* --- Problem ----------------------------------------------- */
-.problem-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 64px;
-  align-items: start;
-}
-.prob-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px 32px;
-}
-.prob-list li {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-  font-size: 15px;
-  line-height: 1.5;
-  color: var(--fg-2);
-}
-.prob-list .dot {
-  flex: 0 0 6px;
-  width: 6px;
-  height: 6px;
-  border-radius: 999px;
-  background: var(--acc, var(--cja-teal));
-  margin-top: 10px;
-}
-
-.problem-summary {
-  margin-top: 32px;
-  padding-top: 24px;
-  border-top: 1px solid var(--border-1);
-  font-weight: 700;
-  color: var(--cja-ink);
-  font-size: 16px;
-  max-width: none;
-}
-
-/* --- Approach --------------------------------------------- */
-.approach-intro { max-width: 720px; margin-bottom: 56px; }
-.approach-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 12px;
-}
-.approach-step {
-  background: var(--bg-1);
-  border: 1px solid var(--border-1);
-  border-radius: var(--radius-lg);
-  padding: 24px;
-  transition: border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
-}
-.approach-step:hover {
-  border-color: var(--border-2);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-sm);
-}
-.approach-step .step-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 28px;
-}
-.step-n {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--acc, var(--cja-teal));
-  letter-spacing: 0.1em;
-}
-.step-head svg { color: var(--cja-ink); width: 22px; height: 22px; }
-.approach-step h3 { font-size: 16px; margin: 0 0 8px; line-height: 1.25; }
-.approach-step p { font-size: 13px; line-height: 1.5; margin: 0; color: var(--fg-2); }
-
-/* --- Services --------------------------------------------- */
-.services-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 56px;
-  flex-wrap: wrap;
-  gap: 24px;
-}
-.offers-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-}
-.offer-card {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: var(--radius-lg);
-  padding: 28px;
-  display: flex;
-  flex-direction: column;
-  transition: border-color 160ms ease, background 160ms ease;
-}
-.offer-card:hover {
-  border-color: var(--cja-aqua);
-  background: rgba(122,228,218,0.04);
-}
-.offer-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-.offer-tag {
-  font-size: 11px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--cja-aqua);
-}
-.offer-time {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: rgba(255,255,255,0.55);
-}
-.offer-card h3 { font-size: 19px; margin: 0 0 12px; line-height: 1.25; color: var(--cja-white); }
-.offer-card p { font-size: 14px; line-height: 1.55; margin: 0 0 24px; flex: 1; }
-.offer-link {
-  color: var(--cja-aqua);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  border: none;
-  cursor: pointer;
-}
-.offer-link .arrow { transition: transform 140ms ease; }
-.offer-link:hover .arrow { transform: translateX(4px); }
-
-/* --- ME inline strip -------------------------------------- */
-.me-strip {
-  background: var(--cja-mist);
-  border-top: 1px solid var(--border-1);
-  border-bottom: 1px solid var(--border-1);
-  padding: 28px 0;
-}
-.me-strip .container {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-  flex-wrap: wrap;
-}
-.me-strip .me-tag {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--cja-cobalt);
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  white-space: nowrap;
-}
-.me-strip .me-tag::before {
-  content: "";
-  width: 24px;
-  height: 1px;
-  background: var(--cja-cobalt);
-}
-.me-strip .me-body {
-  font-size: 15px;
-  color: var(--fg-2);
-  line-height: 1.55;
-  flex: 1;
-  min-width: 280px;
-  margin: 0;
-}
-.me-strip .me-body strong { color: var(--cja-ink); font-weight: 700; }
-.me-strip .me-link {
-  color: var(--cja-cobalt);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  white-space: nowrap;
-  border-bottom: 1px solid currentColor;
-  padding-bottom: 1px;
-}
-
-/* --- Quote / Testimonial ---------------------------------- */
-.quote-block { max-width: 860px; margin: 0 auto; }
-.quote-mark {
-  font-family: Georgia, serif;
-  font-size: 96px;
-  line-height: 0.6;
-  color: var(--acc, var(--cja-teal));
-  font-weight: 700;
-  margin-bottom: 16px;
-  height: 56px;
-}
-.quote-block blockquote {
-  font-size: clamp(22px, 2.6vw, 30px);
-  line-height: 1.35;
-  font-weight: 300;
-  color: var(--cja-ink);
-  margin: 0 0 36px;
-  letter-spacing: -0.012em;
-  text-wrap: balance;
-}
-.quote-by { display: flex; align-items: center; gap: 14px; }
-.quote-ava {
-  width: 48px;
-  height: 48px;
-  border-radius: 999px;
+/* The sentence to use - the whole point of the page */
+.sentence-card {
+  margin-top: 22px;
   background: var(--cja-ink);
-  color: var(--cja-aqua);
-  display: grid;
-  place-items: center;
-  font-size: 14px;
-  font-weight: 700;
-  overflow: hidden;
-}
-.quote-ava img { width: 100%; height: 100%; object-fit: cover; }
-.quote-name { font-size: 14px; font-weight: 700; color: var(--cja-ink); }
-.quote-title { font-size: 13px; color: var(--fg-3); letter-spacing: 0.02em; }
-
-/* --- Final CTA -------------------------------------------- */
-.cta-grid {
-  display: grid;
-  grid-template-columns: 1.25fr 1fr;
-  gap: 64px;
-  align-items: center;
-}
-.cta-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  align-items: flex-start;
-}
-.cta-meta {
-  margin-top: 16px;
-  font-size: 13px;
-  color: rgba(255,255,255,0.6);
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.cta-meta div { display: flex; gap: 8px; align-items: center; }
-.cta-meta svg { width: 14px; height: 14px; color: var(--cja-aqua); }
-
-/* --- Footer ----------------------------------------------- */
-.site-footer {
-  background: var(--cja-ink);
-  color: rgba(255,255,255,0.7);
-  padding: 64px 0 32px;
-}
-.site-footer h4 {
+  background-image: radial-gradient(120% 140% at 0% 0%, #172c4c 0%, var(--cja-ink) 60%);
   color: var(--cja-white);
-  font-size: 12px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  font-weight: 700;
-  margin: 0 0 16px;
-}
-.site-footer a {
-  color: rgba(255,255,255,0.7);
-  display: block;
-  padding: 4px 0;
-  border: none;
-  font-size: 14px;
-  text-decoration: none;
-  cursor: pointer;
-}
-.site-footer a:hover { color: var(--cja-aqua); border: none; }
-.site-footer .grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 48px;
-}
-.site-footer .legal {
-  border-top: 1px solid rgba(255,255,255,0.1);
-  margin-top: 56px;
-  padding-top: 28px;
-  display: flex;
-  justify-content: space-between;
-  font-size: 12px;
-  color: rgba(255,255,255,0.5);
-  flex-wrap: wrap;
-  gap: 16px;
-}
-.site-footer .legal a { display: inline; padding: 0; }
-
-/* --- Variant chrome marker (for tweaks preview) ----------- */
-.variant-chrome {
-  width: 100%;
-  background: var(--bg-1);
-  overflow: hidden;
-}
-
-/* --- Inline CTA band -------------------------------------- */
-.inline-cta {
-  background: var(--cja-ink);
-  color: var(--cja-white);
-  padding: 56px 0;
+  border-radius: var(--radius-xl);
+  padding: 20px;
   position: relative;
   overflow: hidden;
 }
-.inline-cta::before {
+.sentence-card::before {
   content: "";
   position: absolute;
   inset: 0 auto 0 0;
   width: 4px;
-  background: var(--acc, var(--cja-teal));
+  background: var(--gradient-teal);
 }
-.inline-cta-grid {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 56px;
-  align-items: center;
-}
-.inline-cta-eyebrow {
+.sentence-card h2 {
   font-size: 11px;
-  letter-spacing: 0.18em;
+  font-weight: var(--w-bold);
+  letter-spacing: var(--ls-eyebrow);
   text-transform: uppercase;
-  font-weight: 700;
   color: var(--cja-aqua);
-  margin-bottom: 12px;
+  margin: 0 0 14px;
 }
-.inline-cta-title {
-  font-size: clamp(22px, 2.2vw, 28px);
-  line-height: 1.25;
-  letter-spacing: -0.012em;
-  font-weight: 700;
+.sentence-card blockquote {
+  margin: 0 0 16px;
+  font-size: 21px;
+  line-height: 1.3;
+  letter-spacing: var(--ls-snug);
+  font-weight: var(--w-bold);
   color: var(--cja-white);
-  margin: 0;
-  max-width: 30ch;
   text-wrap: balance;
 }
-.inline-cta-actions {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-}
-.inline-cta .btn-ghost {
-  color: var(--cja-white);
-  border-color: rgba(255,255,255,0.25);
-  background: transparent;
-}
-.inline-cta .btn-ghost:hover {
-  color: var(--cja-aqua);
-  border-color: var(--cja-aqua);
-  background: transparent;
-}
-
-/* --- Contact (rebuilt CTA section with form) -------------- */
-/* Two-column: text + direct contacts on the left (~40%),
-   form on the right (~60%). minmax(0, …) on the form track
-   stops the iframe's intrinsic min-content width from
-   stretching the column. */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 2fr minmax(0, 3fr);
-  gap: 64px;
-  align-items: start;
-}
-
-.contact-copy { padding-top: 8px; }
-
-.contact-meta {
-  margin-top: 32px;
-  font-size: 14px;
-  color: rgba(255,255,255,0.7);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.contact-meta > div { display: flex; gap: 10px; align-items: center; }
-.contact-meta svg { width: 16px; height: 16px; color: var(--cja-aqua); flex: 0 0 16px; }
-
-.contact-divider {
-  height: 1px;
-  background: rgba(255,255,255,0.12);
-  margin: 40px 0;
-}
-
-.contact-direct { display: flex; flex-direction: column; gap: 10px; }
-.contact-direct-eyebrow {
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--cja-aqua);
-  margin-bottom: 6px;
-}
-.contact-direct-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 14px;
-  color: rgba(255,255,255,0.78);
-  text-decoration: none;
-  border: none;
-  padding: 4px 0;
-  transition: color 140ms ease;
-}
-.contact-direct-row strong { color: var(--cja-white); font-weight: 700; }
-.contact-direct-row:hover { color: var(--cja-aqua); border: none; }
-.contact-direct-row:hover strong { color: var(--cja-aqua); }
-.contact-direct-row svg { width: 16px; height: 16px; color: var(--cja-aqua); flex: 0 0 16px; }
-
-/* --- Contact form (white card on dark) -------------------- */
-/* overflow: hidden + matching border-radius clips anything the
-   iframe paints right up to its rounded edge. */
-.contact-form-wrap {
-  position: relative;
-  border-radius: 8px;
-  overflow: hidden;
-}
-.contact-form {
-  background: var(--cja-white);
-  border-radius: var(--radius-lg);
-  padding: 36px;
-  box-shadow: var(--shadow-md);
-  color: var(--cja-ink);
-}
-.contact-form-head { margin-bottom: 24px; }
-.contact-form-head h3 {
-  font-size: 22px;
-  margin: 0 0 8px;
-  color: var(--cja-ink);
-  letter-spacing: -0.012em;
-}
-.contact-form-head p {
-  font-size: 14px;
-  color: var(--fg-2);
-  line-height: 1.55;
-  margin: 0;
-}
-
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-bottom: 16px;
-}
-.field {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-bottom: 16px;
-}
-.form-row .field { margin-bottom: 0; }
-.field > span {
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--cja-ink);
-  letter-spacing: 0.04em;
-}
-.field > span em {
-  font-style: normal;
-  font-weight: 400;
-  color: var(--fg-3);
-  margin-left: 6px;
-  letter-spacing: 0;
-}
-.field input,
-.field textarea {
-  width: 100%;
-  font-family: inherit;
-  font-size: 14px;
-  line-height: 1.5;
-  color: var(--cja-ink);
-  background: var(--cja-off-white);
-  border: 1px solid var(--border-1);
-  border-radius: 6px;
-  padding: 10px 12px;
-  transition: border-color 140ms ease, box-shadow 140ms ease, background 140ms ease;
-}
-.field input:focus,
-.field textarea:focus {
-  outline: none;
-  background: var(--cja-white);
-  border-color: var(--cja-teal);
-  box-shadow: var(--ring-focus);
-}
-.field input::placeholder,
-.field textarea::placeholder { color: var(--fg-3); }
-.field textarea { resize: vertical; min-height: 96px; }
-
-.field--err input,
-.field--err textarea { border-color: var(--cja-rose); }
-.field-err {
-  font-size: 12px;
-  color: var(--cja-rose);
-  font-weight: 500;
-  margin-top: 2px;
-}
-
-.form-actions {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: flex-start;
-}
-.form-actions .btn { align-self: stretch; justify-content: center; }
-.form-fine {
-  font-size: 12px;
-  color: var(--fg-3);
-  margin: 0;
-  line-height: 1.5;
-}
-
-/* --- Contact form — success state ------------------------- */
-.contact-form--success {
-  text-align: left;
-  padding: 56px 36px;
-}
-.contact-success-icon {
-  width: 44px !important;
-  height: 44px !important;
-  color: var(--cja-teal) !important;
-  display: block;
-  margin-bottom: 20px;
-}
-.contact-form--success h3 {
-  font-size: 24px;
-  margin: 0 0 12px;
-  color: var(--cja-ink);
-  letter-spacing: -0.012em;
-}
-.contact-form--success p {
-  font-size: 15px;
-  color: var(--fg-2);
-  line-height: 1.6;
-  margin: 0 0 12px;
-  max-width: none;
-}
-.contact-success-meta { font-size: 13px !important; color: var(--fg-3) !important; }
-.contact-success-meta a {
-  color: var(--accent-deep);
-  font-weight: 700;
-  border-bottom: 1px solid currentColor;
-}
-
-/* Smooth in-page anchor scrolling */
-html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+.sentence-note { font-size: 13.5px; line-height: 1.5; color: rgba(255,255,255,0.68); margin: 12px 0 0; font-style: italic; }
 
 /* ===========================================================
-   Responsive — tablet + phone
-   Stacks every multi-column grid into a single column and
-   tightens spacing so the layout works down to ~360px wide.
+   Copy buttons
    =========================================================== */
-@media (max-width: 768px) {
-  html { scroll-padding-top: 72px; }
-  body { overflow-x: hidden; }
+.copy-btn {
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: var(--w-bold);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-2);
+  background: var(--cja-white);
+  color: var(--cja-ink);
+  cursor: pointer;
+  transition: background 140ms ease, border-color 140ms ease, color 140ms ease;
+}
+.copy-btn:hover { border-color: var(--cja-ink); background: var(--bg-3); }
+.copy-btn:focus-visible { outline: none; box-shadow: var(--ring-focus); }
+.copy-btn svg { width: 15px; height: 15px; flex: 0 0 15px; }
+.copy-btn.is-copied { background: var(--accent); border-color: var(--accent); color: var(--cja-white); }
+.copy-btn--on-dark { background: transparent; color: var(--cja-white); border-color: rgba(255,255,255,0.3); }
+.copy-btn--on-dark:hover { background: rgba(255,255,255,0.08); border-color: var(--cja-aqua); color: var(--cja-aqua); }
+.copy-btn--on-dark.is-copied { background: var(--accent); border-color: var(--accent); color: var(--cja-white); }
 
-  .container { padding: 0 20px; }
-  .section { padding: 64px 0; }
-  .section-tight { padding: 48px 0; }
+/* Hidden by default, revealed by the script only where it works */
+.copy-btn[hidden] { display: none; }
 
-  /* Long brand words (e.g. "businesses", "professional") should
-     break instead of clipping the column on a 375px viewport. */
-  h1, h2, h3, h4 { overflow-wrap: break-word; hyphens: auto; }
+/* ===========================================================
+   Alternates (collapsible)
+   =========================================================== */
+.alternates { margin-top: 14px; border-top: 1px solid rgba(255,255,255,0.14); padding-top: 12px; }
+.alternates > summary {
+  cursor: pointer;
+  list-style: none;
+  font-size: 13px;
+  font-weight: var(--w-bold);
+  color: var(--cja-aqua);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.alternates > summary::-webkit-details-marker { display: none; }
+.alternates > summary::after {
+  content: "";
+  width: 7px; height: 7px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 140ms ease;
+}
+.alternates[open] > summary::after { transform: rotate(-135deg) translateY(-2px); }
+.alternates > summary:focus-visible { outline: none; box-shadow: var(--ring-focus); border-radius: 3px; }
+.alternates ul { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 12px; }
+.alternates li {
+  font-size: 15px;
+  line-height: 1.45;
+  color: rgba(255,255,255,0.85);
+  padding-left: 16px;
+  border-left: 2px solid rgba(122,228,218,0.4);
+}
+.alternates li span { display: block; margin-top: 4px; font-size: 13px; color: rgba(255,255,255,0.55); font-style: italic; }
 
-  /* --- Header: drop the inline nav; keep brand + one CTA --- */
-  .site-header { height: 60px; }
-  .site-header nav { display: none; }
-  .site-header .brand img { height: 28px; }
-  .site-header .cta .btn-ghost { display: none; }
-  .site-header .cta .btn { padding: 8px 14px; font-size: 13px; }
+/* ===========================================================
+   Signals list (Section 1)
+   =========================================================== */
+.signals { list-style: none; margin: 24px 0 0; padding: 0; counter-reset: sig; display: grid; gap: 12px; }
+.signals li {
+  counter-increment: sig;
+  background: var(--cja-white);
+  border: 1px solid var(--border-1);
+  border-radius: var(--radius-lg);
+  padding: 18px 18px 18px 46px;
+  position: relative;
+}
+.signals li::before {
+  content: counter(sig);
+  position: absolute;
+  left: 16px;
+  top: 18px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--w-bold);
+  color: var(--accent-deep);
+  letter-spacing: 0.08em;
+}
+.signals strong { display: block; color: var(--cja-ink); font-size: 16px; line-height: 1.35; margin-bottom: 6px; letter-spacing: var(--ls-snug); }
+.signals p { font-size: 14.5px; line-height: 1.5; margin: 0; }
 
-  /* --- Hero variants stack --- */
-  .hero { padding: 48px 0 64px; }
-  .hero--typographic .hero-grid,
-  .hero--split .hero-grid,
-  .hero--dark .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-  .hero--typographic .hero-mark,
-  .hero--dark .hero-mark { justify-content: flex-start; }
-  .hero--typographic .hero-mark img,
-  .hero--dark .hero-mark img { max-width: 140px; }
-  /* 4:5 portrait at 360px was ~450px tall — overpowering the
-     copy above it. Cap closer to the text block height. */
-  .hero--split .hero-portrait { max-width: 260px; margin: 0 auto; }
-  .hero-actions { gap: 10px; margin-top: 28px; }
-  .hero-actions .btn { width: 100%; justify-content: center; }
-  .meta-bar {
-    grid-template-columns: 1fr;
-    gap: 28px;
-    margin-top: 44px;
-    padding-top: 28px;
-  }
-  .meta-bar > div { gap: 6px; }
+/* Two cards rather than one long column: what to look for, and what
+   to leave alone. Teal accent on the first, muted on the second. */
+.who-grid { display: grid; gap: 14px; margin-top: 40px; }
+.who-card {
+  background: var(--cja-white);
+  border: 1px solid var(--border-1);
+  border-top: 3px solid var(--border-2);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+}
+.who-card--fit { border-top-color: var(--accent); }
+.who-card--not { border-top-color: var(--cja-slate-blue); background: var(--bg-3); box-shadow: none; }
+.who-card p { font-size: 15.5px; }
+.who-card .h-sub { margin-top: 0; }
+.who-card--not .h-sub { color: var(--fg-3); }
 
-  /* --- Problem: stack title and bullets; single-column list --- */
-  .problem-grid { grid-template-columns: 1fr; gap: 32px; }
-  .prob-list { grid-template-columns: 1fr; gap: 12px; }
-  .problem-summary { font-size: 15px; }
+/* ===========================================================
+   Quiz link block (Section 2)
+   =========================================================== */
+.link-block {
+  margin: 24px 0 0;
+  background: var(--cja-white);
+  border: 1px solid var(--border-1);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  box-shadow: var(--shadow-sm);
+}
+.link-block .link-label { font-size: 11px; font-weight: var(--w-bold); letter-spacing: var(--ls-eyebrow); text-transform: uppercase; color: var(--fg-3); margin: 0 0 10px; }
+.link-block a.link-url {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--cja-ink);
+  /* Break at the hyphens where possible, anywhere only if it
+     must, so the URL stays readable on a 390px screen. */
+  word-break: normal;
+  overflow-wrap: anywhere;
+  display: inline-block;
+  margin-bottom: 14px;
+  border-bottom-color: var(--border-2);
+}
+.link-block a.link-url:hover { color: var(--accent-deep); }
 
-  /* --- Approach: five-up becomes a single column stack --- */
-  .approach-intro { margin-bottom: 40px; }
-  .approach-grid { grid-template-columns: 1fr; gap: 12px; }
-  .approach-step { padding: 20px; }
-  .approach-step .step-head { margin-bottom: 16px; }
+/* Ready-to-send message */
+.message-card {
+  margin-top: 20px;
+  background: var(--cja-white);
+  border: 1px solid var(--border-1);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+}
+.message-body p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--fg-2);
+  margin: 0 0 14px;
+}
+.message-body p:last-child { margin-bottom: 0; }
+.message-card .copy-btn { margin-top: 18px; }
+.note { font-size: 13.5px; font-style: italic; color: var(--fg-3); }
 
-  /* --- Services: three-up becomes single column.
-     Tight padding + tight internal margins so each stacked
-     card stays compact when reading top-to-bottom. --- */
-  .services-head { flex-direction: column; align-items: flex-start; margin-bottom: 40px; }
-  .offers-grid { grid-template-columns: 1fr; gap: 10px; }
-  .offer-card { padding: 16px 18px; }
-  .offer-meta { margin-bottom: 10px; }
-  .offer-card h3 { font-size: 16px; line-height: 1.3; margin: 0 0 6px; }
-  .offer-card p { font-size: 13.5px; line-height: 1.5; margin: 0 0 12px; }
-  .offer-link { font-size: 12px; }
+/* ===========================================================
+   Section 3 - what you get back
+   =========================================================== */
+.block-a {
+  background: var(--cja-white);
+  border: 1px solid var(--border-1);
+  border-top: 3px solid var(--accent);
+  border-radius: var(--radius-lg);
+  padding: 22px 20px;
+  box-shadow: var(--shadow-sm);
+}
+.block-a .claim {
+  font-size: 18px;
+  line-height: 1.35;
+  font-weight: var(--w-bold);
+  color: var(--cja-ink);
+  letter-spacing: var(--ls-snug);
+  margin: 0 0 16px;
+  text-wrap: balance;
+}
+.block-a .hard-line { font-weight: var(--w-bold); color: var(--cja-ink); font-size: 15px; }
+.block-b { margin-top: 20px; padding-left: 16px; border-left: 2px solid var(--border-2); }
+.block-b p { font-size: 15.5px; }
 
-  /* --- ME inline strip: force column so the body paragraph
-     gets full width instead of squeezing into the row beside
-     the (nowrap) tag --- */
-  .me-strip { padding: 36px 0; }
-  .me-strip .container { flex-direction: column; align-items: flex-start; gap: 14px; }
-  .me-strip .me-body { min-width: 0; flex: none; font-size: 15px; }
-  .me-strip .me-link { white-space: normal; }
+/* ===========================================================
+   Section 4 - testimonials + recent work
+   =========================================================== */
+.quotes { display: grid; gap: 14px; margin-top: 20px; }
+.quote-card {
+  background: var(--cja-white);
+  border: 1px solid var(--border-1);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+}
+.quote-card blockquote {
+  margin: 0 0 14px;
+  font-size: 15.5px;
+  line-height: 1.55;
+  color: var(--fg-2);
+  font-weight: var(--w-light);
+}
+.quote-card blockquote::before { content: "\201C"; }
+.quote-card blockquote::after { content: "\201D"; }
+.quote-by { font-size: 13.5px; line-height: 1.45; color: var(--fg-3); }
+.quote-by strong { display: block; color: var(--cja-ink); font-weight: var(--w-bold); font-size: 14px; }
 
-  /* --- Final / inline CTAs --- */
-  .cta-grid { grid-template-columns: 1fr; gap: 32px; }
-  .cta-actions { align-items: stretch; }
-  .cta-actions .btn { justify-content: center; }
-  .inline-cta { padding: 40px 0; }
-  .inline-cta-grid { grid-template-columns: 1fr; gap: 24px; }
-  .inline-cta-actions { justify-content: flex-start; }
-  .inline-cta-actions .btn { flex: 1; justify-content: center; }
+.work { list-style: none; margin: 20px 0 0; padding: 0; display: grid; gap: 14px; }
+.work li { padding-left: 16px; border-left: 2px solid var(--accent); font-size: 15px; line-height: 1.5; color: var(--fg-2); }
+.work strong { display: block; color: var(--cja-ink); margin-bottom: 4px; letter-spacing: var(--ls-snug); }
 
-  /* --- Contact: stack copy above form; single-column inputs --- */
-  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-  .contact-divider { margin: 28px 0; }
-  .contact-form { padding: 24px; }
-  .contact-form-head h3 { font-size: 20px; }
-  .form-row { grid-template-columns: 1fr; gap: 0; margin-bottom: 0; }
-  .form-row .field { margin-bottom: 16px; }
-  .contact-form--success { padding: 40px 24px; }
+.doc-links { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border-1); font-size: 14px; color: var(--fg-3); display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; }
+.doc-links a { font-weight: var(--w-medium); }
+.doc-links .sep { color: var(--border-2); }
 
-  /* --- Footer: two-up, looser rows so the Connect column
-     (long contact links) doesn't feel packed --- */
-  .site-footer { padding: 48px 0 28px; }
-  .site-footer .grid { grid-template-columns: 1fr 1fr; gap: 36px 28px; }
-  .site-footer h4 { margin: 0 0 14px; }
-  .site-footer a { padding: 6px 0; }
-  .site-footer .legal { flex-direction: column; gap: 8px; align-items: flex-start; margin-top: 40px; }
+/* ===========================================================
+   Section 5 - who I am
+   The portrait now lives in the hero, so this section is text only.
+   =========================================================== */
+.bio p { font-size: 15.5px; line-height: 1.6; }
+
+/* ===========================================================
+   Section 6 - Muhami
+   =========================================================== */
+.muhami p { font-size: 15.5px; max-width: 62ch; }
+.muhami .podcast { margin-top: 20px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.12); }
+
+/* ===========================================================
+   Section 7 - book a call
+   =========================================================== */
+.book { text-align: left; }
+.book p { font-size: 16.5px; line-height: 1.55; max-width: 52ch; }
+.book .btn { margin-top: 24px; width: 100%; }
+
+/* ===========================================================
+   Footer
+   =========================================================== */
+.site-footer { background: var(--cja-ink); color: rgba(255,255,255,0.6); padding: 32px 0; }
+.site-footer img { height: 32px; display: block; margin-bottom: 16px; }
+.site-footer .legal { font-size: 12.5px; line-height: 1.6; display: flex; flex-direction: column; gap: 6px; }
+.site-footer a { color: rgba(255,255,255,0.7); border-bottom-color: rgba(255,255,255,0.25); }
+.site-footer a:hover { color: var(--cja-aqua); }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap; border: 0;
 }
 
-@media (max-width: 480px) {
-  .container { padding: 0 16px; }
-  .section { padding: 48px 0; }
-  .hero { padding: 32px 0 48px; }
-  .contact-form { padding: 20px; }
-  .contact-form--success { padding: 32px 20px; }
-  .offer-card { padding: 14px 16px; }
-  .approach-step { padding: 18px; }
-  .site-footer .grid { grid-template-columns: 1fr; gap: 32px; }
-  /* Smaller portrait + matching decorative offset so the photo
-     sits in proportion to the heading and lede above it. */
-  .hero--split .hero-portrait { max-width: 220px; }
-  .hero--split .hero-portrait::after { inset: auto -8px -8px auto; width: 64px; height: 64px; }
+/* ===========================================================
+   Tablet and up
+   =========================================================== */
+@media (min-width: 640px) {
+  :root { --nav-h: 56px; }
+  .container { padding: 0 32px; }
+  .section { padding: 72px 0; }
+  .brand-bar { padding: 20px 0; }
+  .brand-bar img { height: 30px; }
+  .anchor-nav .container { justify-content: flex-start; gap: 32px; padding: 0 32px; }
+  .anchor-nav a { font-size: 14px; }
+  .hero { padding: 36px 0 56px; }
+  .hero h1 { font-size: 36px; line-height: 1.12; }
+  .hero .lede { font-size: 18px; }
+  .hero-portrait { width: 132px; border-radius: 14px; }
+  .portrait-wrap::after { inset: auto -12px -12px auto; width: 64px; height: 64px; border-radius: 14px; }
+  .who-grid { grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
+  .who-card { padding: 26px; }
+  .divider { margin: 56px 0; }
+  .h-section { font-size: 32px; }
+  .sentence-card { padding: 32px; margin-top: 36px; }
+  .sentence-card blockquote { font-size: 28px; }
+  .signals li { padding: 20px 22px 20px 54px; }
+  .signals li::before { left: 22px; top: 21px; }
+  .link-block, .message-card, .block-a, .quote-card { padding: 26px; }
+  .link-block a.link-url { font-size: 14px; }
+  .book .btn { width: auto; }
+  .site-footer { padding: 48px 0; }
+  .site-footer .legal { flex-direction: row; justify-content: space-between; gap: 16px; }
+}
+
+/* ===========================================================
+   Desktop
+   =========================================================== */
+@media (min-width: 900px) {
+  .section { padding: 88px 0; }
+  /* The original split hero: copy column on the left, portrait on the
+     right with the offset teal block behind it. The sentence card sits
+     under the headline inside the copy column, so headline and card are
+     both on the first screen at 1440x900. */
+  .hero { padding: 28px 0 64px; }
+  .hero .hero-grid {
+    grid-template-columns: 1.25fr 1fr;
+    column-gap: 64px;
+    align-items: center;
+  }
+  .hero .hero-eyebrow { grid-column: 1; grid-row: 1; }
+  .hero .hero-copy    { grid-column: 1; grid-row: 2; padding-top: 20px; }
+  .hero .hero-visual  { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
+  .hero-portrait { width: 100%; max-width: 380px; }
+  .portrait-wrap::after { inset: auto -16px -16px auto; width: 96px; height: 96px; }
+  .hero h1 { font-size: 36px; }
+  .hero .lede { font-size: 18px; }
+  .hero .sentence-card { margin-top: 24px; padding: 32px; }
+  .h-section { padding-top: 24px; }
+  .h-section { font-size: 36px; }
+  .sentence-card { padding: 40px; }
+  .sentence-card blockquote { font-size: 34px; }
+  .signals { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .quotes { grid-template-columns: repeat(3, 1fr); }
+  .work { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .block-a .claim { font-size: 22px; }
 }
 </style>
-
-<!-- Resources referenced from JSX string literals (not visible to the static bundler).
-     Each one is lifted into window.__resources[id] at runtime. -->
-
-
-
-
-
-
-<script src="assets/ee3a687d-ce0d-48f8-a8b1-fa1abebf9307.js"></script>
-<script src="assets/9a85d009-ad2f-4efc-8181-1dd2ed5d25f9.js"></script>
-<script src="assets/ba7812f5-3ba0-4550-aac3-1189a09132e0.js"></script>
-<script src="assets/f685fec7-b576-4cd1-8410-aa5c9b66d3cf.js"></script>
 </head>
 <body>
-<div id="root"></div>
 
-<!-- Tweaks chrome -->
-<script type="text/babel" src="assets/4a570081-2e79-4806-953a-c393f116cff5.jsx"></script>
+<!-- ===== Brand bar (scrolls away) ===================================== -->
+<div class="brand-bar">
+  <div class="container">
+    <img src="assets/logoWide.png" alt="CJA Consulting" width="260" height="30">
+  </div>
+</div>
 
-<!-- Landing page components -->
-<script type="text/babel" src="assets/5190c00a-d681-47ee-9bb9-e44484b23d64.js"></script>
-<script type="text/babel" src="assets/1c50ec6b-8624-4725-a791-f1fe272a7f4f.js"></script>
+<!-- ===== Sticky anchor nav =========================================== -->
+<nav class="anchor-nav" aria-label="On this page">
+  <div class="container">
+    <a href="#who-to-refer">Who to refer</a>
+    <a href="#what-to-send">What to send</a>
+    <a href="#what-you-get-back">What you get back</a>
+    <a href="#book-a-call">Book a call</a>
+  </div>
+</nav>
 
-<script type="text/babel">
-  const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-    "headlineVariant": 0,
-    "heroLayout": "auto",
-    "sectionOrder": "standard",
-    "primaryCta": "clarity",
-    "accentIntensity": "standard"
-  }/*EDITMODE-END*/;
+<main>
 
-  function App() {
-    const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+  <!-- ===== Hero ====================================================== -->
+  <header class="hero">
+    <div class="container">
+     <div class="hero-grid">
+      <p class="eyebrow hero-eyebrow">For collaborators and referrers</p>
 
-    // Re-render Lucide icons whenever tweaks change (sections may swap icons).
-    React.useEffect(() => {
-      const id = window.setTimeout(() => window.lucide && window.lucide.createIcons(), 80);
-      return () => window.clearTimeout(id);
-    }, [t]);
+      <div class="hero-visual">
+        <div class="portrait-wrap">
+          <div class="hero-portrait">
+            <img src="assets/heroPortrait.jpg" alt="Chris Adams, CJA Consulting" width="440" height="550">
+          </div>
+        </div>
+      </div>
 
-    return (
-      <TweaksCtx.Provider value={t}>
-        <LandingPage variant="B" />
+      <div class="hero-copy">
+        <h1>If someone tells you their business has stopped growing, or that they have lots of ideas, big ambitions and no plan, I am the person to send them to.</h1>
+        <p class="lede">Everything you need to make that introduction is on this page. It takes about a minute. Nothing to download.</p>
 
-        <TweaksPanel title="Tweaks">
-          <TweakSection label="Hero" />
-          <TweakRadio  label="Headline" value={t.headlineVariant}
-                       options={[{value: 0, label: 'V1'}, {value: 1, label: 'V2'}, {value: 2, label: 'V3'}]}
-                       onChange={(v) => setTweak('headlineVariant', v)} />
-          <TweakSelect label="Hero layout" value={t.heroLayout}
-                       options={[
-                         {value: 'auto',         label: 'Default (split, portrait)'},
-                         {value: 'typographic',  label: 'Typographic, mark on the right'},
-                         {value: 'split',        label: 'Split, portrait + copy'},
-                         {value: 'dark',         label: 'Dark, ink background'},
-                       ]}
-                       onChange={(v) => setTweak('heroLayout', v)} />
+      <section class="sentence-card" aria-labelledby="sentence-heading">
+        <h2 id="sentence-heading">The sentence to use</h2>
+        <blockquote id="referral-sentence">&ldquo;He fixes professional firms that have stopped growing.&rdquo;</blockquote>
 
-          <TweakSection label="Direction" />
-          <TweakSelect label="Primary CTA" value={t.primaryCta}
-                       options={[
-                         {value: 'gfd',     label: 'Request a Growth Focus Day'},
-                         {value: 'clarity', label: 'Book a Clarity Session'},
-                         {value: 'call',    label: 'Schedule an introductory call'},
-                       ]}
-                       onChange={(v) => setTweak('primaryCta', v)} />
-          <TweakSelect label="Section order" value={t.sectionOrder}
-                       options={[
-                         {value: 'standard',       label: 'Problem → Approach → Services'},
-                         {value: 'problem-first',  label: 'Problem → Services → Approach'},
-                         {value: 'services-first', label: 'Services → Problem → Approach'},
-                       ]}
-                       onChange={(v) => setTweak('sectionOrder', v)} />
+        <button type="button" class="copy-btn copy-btn--on-dark" hidden
+                data-copy-text="He fixes professional firms that have stopped growing."
+                data-copy-label="Copy the sentence">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-btn-label">Copy the sentence</span>
+        </button>
 
-          <TweakSection label="Visuals" />
-          <TweakSelect label="Accent intensity" value={t.accentIntensity}
-                       options={[
-                         {value: 'auto',     label: 'Variant default'},
-                         {value: 'subtle',   label: 'Subtle, teal as small accent only'},
-                         {value: 'standard', label: 'Standard, confident teal moments'},
-                         {value: 'bold',     label: 'Bold. Deeper teal, fuller weight'},
-                       ]}
-                       onChange={(v) => setTweak('accentIntensity', v)} />
-        </TweaksPanel>
-      </TweaksCtx.Provider>
-    );
+        <p class="sentence-note">Say it exactly like that. If they ask who, this page is the link.</p>
+
+        <details class="alternates">
+          <summary>Alternates, if the first does not sit right in your mouth</summary>
+          <ul>
+            <li>&ldquo;He works out who&rsquo;s actually going to send you work.&rdquo;</li>
+            <li>&ldquo;He tells you who to stop chasing, and who you should be talking to instead.&rdquo;</li>
+            <li>&ldquo;He fixes law firms that have stopped growing.&rdquo;<span>Use this one when the person you are talking to is in or near law.</span></li>
+          </ul>
+        </details>
+      </section>
+      </div>
+     </div>
+    </div>
+  </header>
+
+  <!-- ===== Section 1 - Who to refer ================================== -->
+  <section class="section section--paper" id="who-to-refer">
+    <div class="container">
+      <h2 class="h-section">You do not need to diagnose anything</h2>
+      <p class="lede">You just need to recognise something you have already heard someone say.</p>
+
+      <ol class="signals">
+        <li>
+          <strong>&ldquo;I&rsquo;m too busy to work on the business.&rdquo;</strong>
+          <p>Running between meetings, no protected time to think.</p>
+        </li>
+        <li>
+          <strong>&ldquo;We grew to this point and then it just stopped.&rdquo;</strong>
+          <p>The effort has not changed. The results have.</p>
+        </li>
+        <li>
+          <strong>&ldquo;We know we want to expand, we just don&rsquo;t know where to start.&rdquo;</strong>
+          <p>Lots of ideas, real ambition, no structure to act on any of it.</p>
+        </li>
+        <li>
+          <strong>&ldquo;I&rsquo;ve been given a growth target and I&rsquo;m not sure how to hit it.&rdquo;</strong>
+          <p>A step-change in expectations, and no plan they are confident presenting upwards.</p>
+        </li>
+        <li>
+          <strong>&ldquo;I need a new website.&rdquo;</strong>
+          <p>Or LinkedIn, or social, or content, or thought leadership. Asking for a tactic when the problem sits upstream of it. Worth sending if they are open to being told why first.</p>
+        </li>
+        <li>
+          <strong>&ldquo;We&rsquo;re thinking about opening in Dubai.&rdquo;</strong>
+          <p>Or Abu Dhabi, or Riyadh. A UK or US firm looking at the Gulf.</p>
+        </li>
+      </ol>
+
+      <div class="who-grid">
+       <div class="who-card who-card--fit">
+        <h3 class="h-sub">Who they usually are</h3>
+        <p>Firms that sell expertise, where the leader has become the bottleneck. Partners, founders and practice heads rather than marketing teams. Usually law firms, often accountants and other professional firms, and it works anywhere someone brilliant at their craft is running a business they were never trained to run.</p>
+        <p>It also works for individual leaders inside larger firms: a Practice Head or Head of Department carrying a growth target for their own area, without a plan for hitting it.</p>
+        <p>From solo practitioners up to around 150 people, though complexity matters more than size.</p>
+        <p>I work with firms in the UK, the US and across the Gulf, both in their home market and when they are moving into a new one.</p>
+       </div>
+
+       <div class="who-card who-card--not">
+        <h3 class="h-sub">Who they are not</h3>
+        <p>Retail, e-commerce, or anyone whose growth problem is a volume problem. Anyone who will not spend any time on the thinking: wanting a website is fine, and is often exactly the referral I want, but refusing the conversation about why is not. Pre-launch is fine, often ideal, because they are still in planning mode. Twelve months in with the runway spent is not, because there is nothing left to act on the plan with.</p>
+       </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Section 2 - What to send ================================== -->
+  <section class="section" id="what-to-send">
+    <div class="container">
+      <h2 class="h-section">One link, five minutes, no pitch</h2>
+      <p class="lede">Send them this. It is a short assessment called <em>Are you solving the right growth problem?</em> They get a result about their own business, not a sales call. You are not asking them for a favour.</p>
+
+      <div class="link-block">
+        <p class="link-label">The link</p>
+        <!-- TODO: replace href="#" with the live quiz URL -->
+        <a class="link-url" id="quiz-url" href="#">cjaconsult.com/quiz/solving-the-right-growth-problem</a>
+        <br>
+        <button type="button" class="copy-btn" hidden
+                data-copy-text="cjaconsult.com/quiz/solving-the-right-growth-problem"
+                data-copy-label="Copy the link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-btn-label">Copy the link</span>
+        </button>
+      </div>
+
+      <h3 class="h-sub">Ready to send</h3>
+      <p class="note">Swap the bracket. Works as an email, a WhatsApp or a DM.</p>
+
+      <div class="message-card">
+        <div class="message-body" id="ready-message">
+          <p>Hi [Name], I was talking to Chris Adams and thought of you.</p>
+          <p>He works with firms that sell expertise and have either stopped growing or have big ambitions and no structure for getting there. He spent sixteen years inside law firms, including Freshfields, Hogan Lovells and Al Tamimi, doing this from the inside. Now he does it from the outside through his own firm, for people like you.</p>
+          <p>He has a short quiz that tells you whether you are solving the right growth problem. Five minutes, no pitch: https://cjaconsult.com/quiz/solving-the-right-growth-problem</p>
+          <p>Happy to introduce you properly if it would help.</p>
+        </div>
+        <button type="button" class="copy-btn" hidden
+                data-copy-from="#ready-message"
+                data-copy-label="Copy the message">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-btn-label">Copy the message</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Section 3 - What you get back ============================= -->
+  <section class="section section--mist" id="what-you-get-back">
+    <div class="container">
+      <h2 class="h-section">This works both ways, and here is exactly how</h2>
+
+      <div class="block-a">
+        <p class="claim">When a client will not buy the bigger piece they actually need, send them to me. I will get them to the why, and hand them straight back to you.</p>
+        <p>You know the conversation. Someone asks you for a logo, or a website, or one piece of content, and you can see they need the thinking behind it first. They are not being difficult. They just cannot see why yet. That is the part I do, I give them the why, and then they are yours.</p>
+        <p class="hard-line">No competing for your client. No white-labelling.</p>
+      </div>
+
+      <div class="block-b">
+        <p>And when I refer a client to you, they arrive knowing who they are targeting, what they are trying to achieve and what comes next. You start at execution instead of spending the first month on groundwork.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Section 4 - Proof ========================================= -->
+  <section class="section" id="what-clients-say">
+    <div class="container">
+      <h2 class="h-section">What clients say</h2>
+
+      <div class="quotes">
+        <figure class="quote-card">
+          <blockquote>I would recommend Chris to law firms and corporate services providers, especially those who are looking to expand their presence.</blockquote>
+          <figcaption class="quote-by">
+            <strong>Darren Bradshaw</strong>
+            <a href="https://galadarilaw.com/lawyer/darren-bradshaw/">Galadari Advocates &amp; Legal Consultants</a>
+          </figcaption>
+        </figure>
+
+        <figure class="quote-card">
+          <blockquote>Chris brought a fresh and objective perspective to the business. He took the time to understand our practice, ask the right questions and challenge our thinking in a constructive way. We came away with a stronger understanding of where to focus our time and resources, and a more structured approach to achieving our long-term objectives.</blockquote>
+          <figcaption class="quote-by">
+            <strong>Alan Dorgan</strong>
+            CSP Group
+          </figcaption>
+        </figure>
+
+        <figure class="quote-card">
+          <blockquote>I would recommend Chris to founders and professional services leaders looking for strategic clarity, commercial focus and practical support in developing their growth plans.</blockquote>
+          <figcaption class="quote-by">
+            <strong>Nick Davies</strong>
+            SBL International
+          </figcaption>
+        </figure>
+      </div>
+
+      <hr class="divider">
+
+      <h2 class="h-section">Recent work</h2>
+
+      <ul class="work">
+        <li>
+          <strong>UAE market entry for an international law firm.</strong>
+          Launch strategy for a Private Capital and Funds offering across DIFC, ADGM and onshore.
+        </li>
+        <li>
+          <strong>Business development strategy for a national law firm.</strong>
+          A strong network and reactive BD turned into a structured way of converting relationships into work.
+        </li>
+        <li>
+          <strong>Growth Focus Day for a regional tax and accounting practice.</strong>
+          A practice head who had lost confidence in a stretch target left with a credible plan, and went on to recommend the wider partnership engage me too.
+        </li>
+      </ul>
+
+      <!-- Hidden until the PDFs exist. Restore this block and swap each
+           href="#" for the real document URL.
+        <p class="doc-links">
+          <a href="#">Read the case studies</a>
+          <span class="sep">&middot;</span>
+          <a href="#">Chris Adams profile</a>
+          <span class="sep">&middot;</span>
+          <a href="#">Collaborator and Introducer Guide</a>
+        </p>
+      -->
+    </div>
+  </section>
+
+  <!-- ===== Section 5 - Who I am ====================================== -->
+  <section class="section section--paper" id="who-i-am">
+    <div class="container">
+      <h2 class="h-section">Who I am</h2>
+      <div class="bio">
+        <div>
+          <p>Over twenty years in professional services, sixteen of them in-house in law firms including Freshfields, Hogan Lovells, Al Tamimi and Squire Patton Boggs, across London, Singapore and Dubai. Based in Dubai since 2014. CJA Consulting since 2023.</p>
+          <p>Working with lawyers, doctors and accountants is not like working with other businesses, and not many people can do it. They deliver the service and run the business at the same time. The same person has to be the salesperson, the marketer, the people manager, the client manager and the one who brings the new work in, usually without having been trained for any of it, and usually while the billable work still has to go out of the door. That is the job I did from the inside for sixteen years. It is the job I now do from the outside.</p>
+          <p>I have a law degree but never practised, which is probably why lawyers talk to me.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Section 6 - Muhami ======================================== -->
+  <section class="section section--ink muhami" id="muhami">
+    <div class="container">
+      <h2 class="h-section">Muhami</h2>
+      <p>I also built and run <a href="https://www.muhami.ae"><strong>Muhami</strong></a>, a legal knowledge platform and lawyer directory for the UAE and the wider Middle East. It is where people go when they have a legal question, and where lawyers get found.</p>
+      <p>If you know a firm that wants to be visible in this region, that is a short conversation. Every lawyer on the platform is verified before they go on it, which is rather the point of it.</p>
+      <p class="podcast"><strong>Muhami Matters</strong> is the podcast, with lawyers, other professionals and the people who advise them.
+        <a href="https://www.cjaconsult.com/podcast">Listen</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== Section 7 - Book a partner call =========================== -->
+  <section class="section book" id="book-a-call">
+    <div class="container">
+      <h2 class="h-section">Book a partner call</h2>
+      <p>Thirty minutes, no pitch. We work out who you are already talking to, who I am already talking to, and whether there is enough overlap to be deliberate about this rather than occasional.</p>
+      <a class="btn btn-primary btn-lg" href="https://calendly.com/cjaconsult/partner-call-with-chris-adams-30-mins">Book a partner call</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <img src="assets/iconMark.png" alt="" width="32" height="32">
+    <div class="legal">
+      <div>&copy; 2026 CJA Consulting LLC-FZ. All rights reserved.</div>
+      <div><a href="https://cjaconsult.com">cjaconsult.com</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ===========================================================
+   Progressive enhancement only. Everything above reads and
+   works with JavaScript switched off.
+   1. Sticky nav: highlights the section you are in.
+   2. Copy-to-clipboard buttons (revealed only if supported).
+   The alternates use <details>, so they need no script at all.
+   =========================================================== */
+(function () {
+  'use strict';
+
+  /* ---- 1. Sticky nav active state ------------------------- */
+  var links = Array.prototype.slice.call(document.querySelectorAll('.anchor-nav a'));
+  var targets = links
+    .map(function (a) { return document.querySelector(a.getAttribute('href')); })
+    .filter(Boolean);
+
+  if (targets.length && 'IntersectionObserver' in window) {
+    var setActive = function (id) {
+      links.forEach(function (a) {
+        a.classList.toggle('is-active', a.getAttribute('href') === '#' + id);
+      });
+    };
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { setActive(entry.target.id); }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+    targets.forEach(function (t) { observer.observe(t); });
   }
 
-  ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  /* ---- 2. Copy to clipboard ------------------------------- */
+  function legacyCopy(text) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed';
+    ta.style.top = '-1000px';
+    document.body.appendChild(ta);
+    ta.select();
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+    document.body.removeChild(ta);
+    return ok;
+  }
+
+  function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(text).then(function () { return true; },
+                                                      function () { return legacyCopy(text); });
+    }
+    return Promise.resolve(legacyCopy(text));
+  }
+
+  function textFor(btn) {
+    if (btn.hasAttribute('data-copy-text')) { return btn.getAttribute('data-copy-text'); }
+    var src = document.querySelector(btn.getAttribute('data-copy-from'));
+    if (!src) { return ''; }
+    return Array.prototype.slice.call(src.querySelectorAll('p'))
+      .map(function (p) { return p.textContent.trim(); })
+      .join('\n\n');
+  }
+
+  var supported = (navigator.clipboard && window.isSecureContext) ||
+                  (document.queryCommandSupported && document.queryCommandSupported('copy'));
+
+  Array.prototype.forEach.call(document.querySelectorAll('.copy-btn'), function (btn) {
+    if (!supported) { return; }
+    btn.hidden = false;
+
+    var label = btn.querySelector('.copy-btn-label');
+    var resting = btn.getAttribute('data-copy-label') || (label && label.textContent) || 'Copy';
+    var timer;
+
+    btn.addEventListener('click', function () {
+      copyText(textFor(btn)).then(function (ok) {
+        if (label) { label.textContent = ok ? 'Copied' : 'Press Ctrl+C to copy'; }
+        btn.classList.toggle('is-copied', ok);
+        window.clearTimeout(timer);
+        timer = window.setTimeout(function () {
+          if (label) { label.textContent = resting; }
+          btn.classList.remove('is-copied');
+        }, 2200);
+      });
+    });
+  });
+}());
 </script>
 
-
-</body></html>
+</body>
+</html>
