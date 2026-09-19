@@ -148,6 +148,8 @@ a:focus-visible { outline: none; box-shadow: var(--ring-focus); border-radius: 2
 .section--ink { background: var(--cja-ink); color: var(--cja-white); }
 .section--ink h2, .section--ink h3 { color: var(--cja-white); }
 .section--ink p { color: rgba(255,255,255,0.78); }
+.section--ink a { color: var(--cja-aqua); border-bottom-color: rgba(122,228,218,0.35); }
+.section--ink a:hover { border-bottom-color: var(--cja-aqua); }
 
 .eyebrow {
   display: flex;
@@ -164,7 +166,28 @@ a:focus-visible { outline: none; box-shadow: var(--ring-focus); border-radius: 2
 .section--ink .eyebrow { color: var(--cja-aqua); }
 .section--ink .eyebrow::before { background: var(--cja-aqua); }
 
-.h-section { font-size: 26px; line-height: 1.15; letter-spacing: var(--ls-tight); margin: 0 0 16px; }
+.h-section {
+  font-size: 26px;
+  line-height: 1.15;
+  letter-spacing: var(--ls-tight);
+  margin: 0 0 16px;
+  position: relative;
+  padding-top: 20px;
+}
+/* Short accent rule above each section heading, borrowed from the
+   original site's eyebrow. Gives the page a repeating beat. */
+.h-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 2px;
+  background: var(--accent);
+}
+.section--ink .h-section::before { background: var(--cja-aqua); }
+
+.divider { height: 1px; border: 0; background: var(--border-1); margin: 40px 0; }
 .h-sub {
   font-size: 13px;
   font-weight: var(--w-bold);
@@ -174,6 +197,12 @@ a:focus-visible { outline: none; box-shadow: var(--ring-focus); border-radius: 2
   margin: 40px 0 16px;
 }
 .lede { font-size: 17px; font-weight: var(--w-light); line-height: 1.55; color: var(--fg-2); }
+
+/* Keep the long-form sections to a comfortable measure. */
+#who-to-refer p,
+#what-you-get-back p,
+#who-i-am p,
+#what-to-send .lede { max-width: 70ch; }
 
 /* ===========================================================
    Buttons
@@ -204,7 +233,7 @@ a:focus-visible { outline: none; box-shadow: var(--ring-focus); border-radius: 2
    Brand bar + sticky anchor nav
    =========================================================== */
 .brand-bar {
-  padding: 16px 0;
+  padding: 12px 0;
   border-bottom: 1px solid var(--border-1);
   background: var(--cja-white);
 }
@@ -253,23 +282,68 @@ a:focus-visible { outline: none; box-shadow: var(--ring-focus); border-radius: 2
 /* ===========================================================
    Hero
    =========================================================== */
-.hero { padding: 32px 0 40px; }
+.hero { padding: 20px 0 40px; }
+
+/* Row 1 puts the eyebrow beside a small portrait; the headline, lede
+   and sentence card run full width beneath it. Costs far less vertical
+   space than stacking the photo, which is what keeps the sentence card
+   on the first screen at 390x844. */
+.hero .hero-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 16px;
+  align-items: center;
+}
+.hero .hero-eyebrow { grid-column: 1; grid-row: 1; margin: 0; }
+.hero .hero-visual  { grid-column: 2; grid-row: 1; }
+.hero .hero-copy    { grid-column: 1 / -1; grid-row: 2; padding-top: 14px; }
+
 .hero h1 {
-  font-size: 27px;
-  line-height: 1.18;
+  font-size: 26px;
+  line-height: 1.16;
   letter-spacing: var(--ls-tight);
-  margin: 0 0 16px;
+  margin: 0 0 14px;
 }
 .hero .lede { margin: 0; max-width: 56ch; }
 
+/* Portrait, carried over from the original split hero: 4:5 crop,
+   soft shadow and the offset teal block behind it. */
+.portrait-wrap { position: relative; width: fit-content; margin-left: auto; }
+.hero-portrait {
+  position: relative;
+  width: 76px;
+  aspect-ratio: 4/5;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin-left: auto;
+}
+.hero-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: contrast(1.02) saturate(0.92);
+}
+.portrait-wrap::after {
+  content: "";
+  position: absolute;
+  inset: auto -8px -8px auto;
+  width: 40px;
+  height: 40px;
+  background: var(--accent);
+  z-index: -1;
+  border-radius: 10px;
+}
+
 /* The sentence to use - the whole point of the page */
 .sentence-card {
-  margin-top: 28px;
+  margin-top: 22px;
   background: var(--cja-ink);
   background-image: radial-gradient(120% 140% at 0% 0%, #172c4c 0%, var(--cja-ink) 60%);
   color: var(--cja-white);
   border-radius: var(--radius-xl);
-  padding: 24px 20px;
+  padding: 20px;
   position: relative;
   overflow: hidden;
 }
@@ -289,7 +363,7 @@ a:focus-visible { outline: none; box-shadow: var(--ring-focus); border-radius: 2
   margin: 0 0 14px;
 }
 .sentence-card blockquote {
-  margin: 0 0 18px;
+  margin: 0 0 16px;
   font-size: 21px;
   line-height: 1.3;
   letter-spacing: var(--ls-snug);
@@ -297,7 +371,7 @@ a:focus-visible { outline: none; box-shadow: var(--ring-focus); border-radius: 2
   color: var(--cja-white);
   text-wrap: balance;
 }
-.sentence-note { font-size: 13.5px; line-height: 1.5; color: rgba(255,255,255,0.68); margin: 16px 0 0; font-style: italic; }
+.sentence-note { font-size: 13.5px; line-height: 1.5; color: rgba(255,255,255,0.68); margin: 12px 0 0; font-style: italic; }
 
 /* ===========================================================
    Copy buttons
@@ -331,7 +405,7 @@ a:focus-visible { outline: none; box-shadow: var(--ring-focus); border-radius: 2
 /* ===========================================================
    Alternates (collapsible)
    =========================================================== */
-.alternates { margin-top: 18px; border-top: 1px solid rgba(255,255,255,0.14); padding-top: 14px; }
+.alternates { margin-top: 14px; border-top: 1px solid rgba(255,255,255,0.14); padding-top: 12px; }
 .alternates > summary {
   cursor: pointer;
   list-style: none;
@@ -389,7 +463,22 @@ a:focus-visible { outline: none; box-shadow: var(--ring-focus); border-radius: 2
 .signals strong { display: block; color: var(--cja-ink); font-size: 16px; line-height: 1.35; margin-bottom: 6px; letter-spacing: var(--ls-snug); }
 .signals p { font-size: 14.5px; line-height: 1.5; margin: 0; }
 
-.who-block p { font-size: 15.5px; }
+/* Two cards rather than one long column: what to look for, and what
+   to leave alone. Teal accent on the first, muted on the second. */
+.who-grid { display: grid; gap: 14px; margin-top: 40px; }
+.who-card {
+  background: var(--cja-white);
+  border: 1px solid var(--border-1);
+  border-top: 3px solid var(--border-2);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+}
+.who-card--fit { border-top-color: var(--accent); }
+.who-card--not { border-top-color: var(--cja-slate-blue); background: var(--bg-3); box-shadow: none; }
+.who-card p { font-size: 15.5px; }
+.who-card .h-sub { margin-top: 0; }
+.who-card--not .h-sub { color: var(--fg-3); }
 
 /* ===========================================================
    Quiz link block (Section 2)
@@ -494,18 +583,9 @@ a:focus-visible { outline: none; box-shadow: var(--ring-focus); border-radius: 2
 
 /* ===========================================================
    Section 5 - who I am
+   The portrait now lives in the hero, so this section is text only.
    =========================================================== */
-.bio-portrait {
-  width: 180px;
-  aspect-ratio: 4/5;
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  box-shadow: var(--shadow-md);
-  margin: 0 0 24px;
-}
-.bio-portrait img { width: 100%; height: 100%; object-fit: cover; display: block; filter: contrast(1.02) saturate(0.92); }
 .bio p { font-size: 15.5px; line-height: 1.6; }
-.bio p + p { margin-top: 0; }
 
 /* ===========================================================
    Section 6 - Muhami
@@ -546,9 +626,14 @@ a:focus-visible { outline: none; box-shadow: var(--ring-focus); border-radius: 2
   .brand-bar img { height: 30px; }
   .anchor-nav .container { justify-content: flex-start; gap: 32px; padding: 0 32px; }
   .anchor-nav a { font-size: 14px; }
-  .hero { padding: 48px 0 56px; }
-  .hero h1 { font-size: 38px; line-height: 1.12; }
+  .hero { padding: 36px 0 56px; }
+  .hero h1 { font-size: 36px; line-height: 1.12; }
   .hero .lede { font-size: 18px; }
+  .hero-portrait { width: 132px; border-radius: 14px; }
+  .portrait-wrap::after { inset: auto -12px -12px auto; width: 64px; height: 64px; border-radius: 14px; }
+  .who-grid { grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
+  .who-card { padding: 26px; }
+  .divider { margin: 56px 0; }
   .h-section { font-size: 32px; }
   .sentence-card { padding: 32px; margin-top: 36px; }
   .sentence-card blockquote { font-size: 28px; }
@@ -566,26 +651,31 @@ a:focus-visible { outline: none; box-shadow: var(--ring-focus); border-radius: 2
    =========================================================== */
 @media (min-width: 900px) {
   .section { padding: 88px 0; }
-  .hero { padding: 64px 0 80px; }
-  /* Two-up so the referral sentence sits beside the headline and
-     stays above the fold, per the brief's first design principle. */
+  /* The original split hero: copy column on the left, portrait on the
+     right with the offset teal block behind it. The sentence card sits
+     under the headline inside the copy column, so headline and card are
+     both on the first screen at 1440x900. */
+  .hero { padding: 28px 0 64px; }
   .hero .hero-grid {
-    display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 56px;
-    align-items: start;
+    grid-template-columns: 1.25fr 1fr;
+    column-gap: 64px;
+    align-items: center;
   }
-  .hero h1 { font-size: 40px; }
+  .hero .hero-eyebrow { grid-column: 1; grid-row: 1; }
+  .hero .hero-copy    { grid-column: 1; grid-row: 2; padding-top: 20px; }
+  .hero .hero-visual  { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
+  .hero-portrait { width: 100%; max-width: 380px; }
+  .portrait-wrap::after { inset: auto -16px -16px auto; width: 96px; height: 96px; }
+  .hero h1 { font-size: 36px; }
   .hero .lede { font-size: 18px; }
-  .hero .sentence-card { margin-top: 0; }
+  .hero .sentence-card { margin-top: 24px; padding: 32px; }
+  .h-section { padding-top: 24px; }
   .h-section { font-size: 36px; }
   .sentence-card { padding: 40px; }
   .sentence-card blockquote { font-size: 34px; }
   .signals { grid-template-columns: 1fr 1fr; gap: 14px; }
   .quotes { grid-template-columns: repeat(3, 1fr); }
   .work { grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  .bio { display: grid; grid-template-columns: 220px 1fr; gap: 48px; align-items: start; }
-  .bio-portrait { width: 100%; margin: 0; }
   .block-a .claim { font-size: 22px; }
 }
 </style>
@@ -615,11 +705,19 @@ a:focus-visible { outline: none; box-shadow: var(--ring-focus); border-radius: 2
   <header class="hero">
     <div class="container">
      <div class="hero-grid">
+      <p class="eyebrow hero-eyebrow">For collaborators and referrers</p>
+
+      <div class="hero-visual">
+        <div class="portrait-wrap">
+          <div class="hero-portrait">
+            <img src="assets/heroPortrait.jpg" alt="Chris Adams, CJA Consulting" width="440" height="550">
+          </div>
+        </div>
+      </div>
+
       <div class="hero-copy">
-        <p class="eyebrow">For collaborators and referrers</p>
         <h1>If someone tells you their business has stopped growing, or that they have lots of ideas, big ambitions and no plan, I am the person to send them to.</h1>
         <p class="lede">Everything you need to make that introduction is on this page. It takes about a minute. Nothing to download.</p>
-      </div>
 
       <section class="sentence-card" aria-labelledby="sentence-heading">
         <h2 id="sentence-heading">The sentence to use</h2>
@@ -643,6 +741,7 @@ a:focus-visible { outline: none; box-shadow: var(--ring-focus); border-radius: 2
           </ul>
         </details>
       </section>
+      </div>
      </div>
     </div>
   </header>
@@ -680,15 +779,19 @@ a:focus-visible { outline: none; box-shadow: var(--ring-focus); border-radius: 2
         </li>
       </ol>
 
-      <div class="who-block">
+      <div class="who-grid">
+       <div class="who-card who-card--fit">
         <h3 class="h-sub">Who they usually are</h3>
         <p>Firms that sell expertise, where the leader has become the bottleneck. Partners, founders and practice heads rather than marketing teams. Usually law firms, often accountants and other professional firms, and it works anywhere someone brilliant at their craft is running a business they were never trained to run.</p>
         <p>It also works for individual leaders inside larger firms: a Practice Head or Head of Department carrying a growth target for their own area, without a plan for hitting it.</p>
         <p>From solo practitioners up to around 150 people, though complexity matters more than size.</p>
         <p>I work with firms in the UK, the US and across the Gulf, both in their home market and when they are moving into a new one.</p>
+       </div>
 
+       <div class="who-card who-card--not">
         <h3 class="h-sub">Who they are not</h3>
         <p>Retail, e-commerce, or anyone whose growth problem is a volume problem. Anyone who will not spend any time on the thinking: wanting a website is fine, and is often exactly the referral I want, but refusing the conversation about why is not. Pre-launch is fine, often ideal, because they are still in planning mode. Twelve months in with the runway spent is not, because there is nothing left to act on the plan with.</p>
+       </div>
       </div>
     </div>
   </section>
@@ -719,7 +822,7 @@ a:focus-visible { outline: none; box-shadow: var(--ring-focus); border-radius: 2
         <div class="message-body" id="ready-message">
           <p>Hi [Name], I was talking to Chris Adams and thought of you.</p>
           <p>He works with firms that sell expertise and have either stopped growing or have big ambitions and no structure for getting there. He spent sixteen years inside law firms, including Freshfields, Hogan Lovells and Al Tamimi, doing this from the inside. Now he does it from the outside through his own firm, for people like you.</p>
-          <p>He has a short quiz that tells you whether you are solving the right growth problem. Five minutes, no pitch: [link]</p>
+          <p>He has a short quiz that tells you whether you are solving the right growth problem. Five minutes, no pitch: https://cjaconsult.com/quiz/solving-the-right-growth-problem</p>
           <p>Happy to introduce you properly if it would help.</p>
         </div>
         <button type="button" class="copy-btn" hidden
@@ -780,7 +883,9 @@ a:focus-visible { outline: none; box-shadow: var(--ring-focus); border-radius: 2
         </figure>
       </div>
 
-      <h2 class="h-section" style="margin-top:56px">Recent work</h2>
+      <hr class="divider">
+
+      <h2 class="h-section">Recent work</h2>
 
       <ul class="work">
         <li>
@@ -813,10 +918,8 @@ a:focus-visible { outline: none; box-shadow: var(--ring-focus); border-radius: 2
   <!-- ===== Section 5 - Who I am ====================================== -->
   <section class="section section--paper" id="who-i-am">
     <div class="container">
+      <h2 class="h-section">Who I am</h2>
       <div class="bio">
-        <div class="bio-portrait">
-          <img src="assets/heroPortrait.jpg" alt="Chris Adams, CJA Consulting" width="440" height="550">
-        </div>
         <div>
           <p>Over twenty years in professional services, sixteen of them in-house in law firms including Freshfields, Hogan Lovells, Al Tamimi and Squire Patton Boggs, across London, Singapore and Dubai. Based in Dubai since 2014. CJA Consulting since 2023.</p>
           <p>Working with lawyers, doctors and accountants is not like working with other businesses, and not many people can do it. They deliver the service and run the business at the same time. The same person has to be the salesperson, the marketer, the people manager, the client manager and the one who brings the new work in, usually without having been trained for any of it, and usually while the billable work still has to go out of the door. That is the job I did from the inside for sixteen years. It is the job I now do from the outside.</p>
@@ -829,6 +932,7 @@ a:focus-visible { outline: none; box-shadow: var(--ring-focus); border-radius: 2
   <!-- ===== Section 6 - Muhami ======================================== -->
   <section class="section section--ink muhami" id="muhami">
     <div class="container">
+      <h2 class="h-section">Muhami</h2>
       <p>I also built and run <a href="https://www.muhami.ae"><strong>Muhami</strong></a>, a legal knowledge platform and lawyer directory for the UAE and the wider Middle East. It is where people go when they have a legal question, and where lawyers get found.</p>
       <p>If you know a firm that wants to be visible in this region, that is a short conversation. Every lawyer on the platform is verified before they go on it, which is rather the point of it.</p>
       <p class="podcast"><strong>Muhami Matters</strong> is the podcast, with lawyers, other professionals and the people who advise them.
@@ -841,6 +945,7 @@ a:focus-visible { outline: none; box-shadow: var(--ring-focus); border-radius: 2
   <!-- ===== Section 7 - Book a partner call =========================== -->
   <section class="section book" id="book-a-call">
     <div class="container">
+      <h2 class="h-section">Book a partner call</h2>
       <p>Thirty minutes, no pitch. We work out who you are already talking to, who I am already talking to, and whether there is enough overlap to be deliberate about this rather than occasional.</p>
       <!-- TODO: replace href="#" with the partner call booking URL -->
       <a class="btn btn-primary btn-lg" href="#">Book a partner call</a>
